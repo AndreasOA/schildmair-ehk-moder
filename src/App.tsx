@@ -27,6 +27,7 @@ import {
   X,
   CaretDown
 } from '@phosphor-icons/react'
+import schildmairLogo from '@/assets/images/schildmair-logo.svg'
 
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -73,9 +74,11 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
-              <div className="bg-primary text-primary-foreground px-4 py-2 rounded font-bold text-lg">
-                Schildmair
-              </div>
+              <img 
+                src={schildmairLogo} 
+                alt="Schildmair Logo" 
+                className="h-10 w-auto"
+              />
             </div>
             
             {/* Desktop Navigation */}
@@ -179,8 +182,15 @@ function App() {
             <Badge variant="secondary" className="mb-6">
               Seit Generationen Ihr vertrauenswürdiger Partner
             </Badge>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              <span className="text-primary">Schildmair</span> EHK Sowi
+            <div className="flex justify-center mb-6">
+              <img 
+                src={schildmairLogo} 
+                alt="Schildmair EHK Sowi Logo" 
+                className="h-16 w-auto"
+              />
+            </div>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+              EHK Sowi
             </h1>
             <p className="text-xl sm:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
               Ihr vertrauenswürdiger Fachhandel für Eisenwaren & Haushaltsbedarf in Wels
@@ -443,6 +453,13 @@ function App() {
       <section id="about" className="py-20 bg-muted/20 scroll-offset">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
+            <div className="flex justify-center mb-6">
+              <img 
+                src={schildmairLogo} 
+                alt="Schildmair Logo" 
+                className="h-14 w-auto"
+              />
+            </div>
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
               Über Schildmair
             </h2>
@@ -1008,8 +1025,12 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="col-span-1 md:col-span-2">
-              <div className="bg-primary-foreground text-primary px-4 py-2 rounded font-bold text-lg inline-block mb-4">
-                Schildmair
+              <div className="flex items-center mb-4">
+                <img 
+                  src={schildmairLogo} 
+                  alt="Schildmair Logo" 
+                  className="h-12 w-auto"
+                />
               </div>
               <p className="text-primary-foreground/80 mb-4">
                 Ihr vertrauenswürdiger Fachhandel für Eisenwaren & Haushaltsbedarf in Wels. 
