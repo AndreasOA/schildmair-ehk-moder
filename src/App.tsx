@@ -220,80 +220,6 @@ function App() {
         </div>
       </section>
 
-      {/* Target Groups */}
-      <section className="py-20 bg-muted/20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-              Für wen wir da sind
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              Maßgeschneiderte Lösungen für verschiedene Zielgruppen
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {targetGroups.map((group, index) => (
-              <Card key={index} className="text-center hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <group.icon size={56} className="text-secondary mx-auto mb-4" />
-                  <CardTitle>{group.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription>{group.description}</CardDescription>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Partner Brands */}
-      <section className="py-20 bg-background overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-              Unsere Markenpartner
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              Qualität durch bewährte Marken und langjährige Partnerschaften
-            </p>
-          </div>
-
-          {/* Moving Logo Strip */}
-          <div className="relative">
-            <div className="flex animate-scroll space-x-8">
-              {/* First set of logos */}
-              {partnerBrands.map((brand, index) => (
-                <div 
-                  key={`first-${index}`} 
-                  className="flex-shrink-0 bg-card border border-border rounded-lg p-6 w-32 h-20 flex items-center justify-center hover:shadow-md transition-shadow"
-                >
-                  <img 
-                    src={`https://via.placeholder.com/120x60/f1f5f9/64748b?text=${encodeURIComponent(brand)}`}
-                    alt={`${brand} Logo`}
-                    className="max-w-full max-h-full object-contain"
-                  />
-                </div>
-              ))}
-              {/* Duplicate set for seamless loop */}
-              {partnerBrands.map((brand, index) => (
-                <div 
-                  key={`second-${index}`} 
-                  className="flex-shrink-0 bg-card border border-border rounded-lg p-6 w-32 h-20 flex items-center justify-center hover:shadow-md transition-shadow"
-                >
-                  <img 
-                    src={`https://via.placeholder.com/120x60/f1f5f9/64748b?text=${encodeURIComponent(brand)}`}
-                    alt={`${brand} Logo`}
-                    className="max-w-full max-h-full object-contain"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Store Gallery Section */}
       <section id="gallery" className="py-20 bg-background scroll-offset">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -378,6 +304,80 @@ function App() {
                 <h3 className="font-semibold mb-2">Gratis Parkplatz</h3>
                 <p className="text-sm text-muted-foreground">Kostenlose Parkplätze direkt vor dem Geschäft</p>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Target Groups */}
+      <section className="py-20 bg-muted/20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+              Für wen wir da sind
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Maßgeschneiderte Lösungen für verschiedene Zielgruppen
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {targetGroups.map((group, index) => (
+              <Card key={index} className="text-center hover:shadow-lg transition-shadow">
+                <CardHeader>
+                  <group.icon size={56} className="text-secondary mx-auto mb-4" />
+                  <CardTitle>{group.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription>{group.description}</CardDescription>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Partner Brands */}
+      <section className="py-20 bg-background overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+              Unsere Markenpartner
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Qualität durch bewährte Marken und langjährige Partnerschaften
+            </p>
+          </div>
+
+          {/* Moving Logo Strip */}
+          <div className="relative">
+            <div className="flex animate-scroll space-x-8">
+              {/* First set of logos */}
+              {partnerBrands.map((brand, index) => (
+                <div 
+                  key={`first-${index}`} 
+                  className="flex-shrink-0 bg-card border border-border rounded-lg p-6 w-32 h-20 flex items-center justify-center hover:shadow-md transition-shadow"
+                >
+                  <img 
+                    src={`https://via.placeholder.com/120x60/f1f5f9/64748b?text=${encodeURIComponent(brand)}`}
+                    alt={`${brand} Logo`}
+                    className="max-w-full max-h-full object-contain"
+                  />
+                </div>
+              ))}
+              {/* Duplicate set for seamless loop */}
+              {partnerBrands.map((brand, index) => (
+                <div 
+                  key={`second-${index}`} 
+                  className="flex-shrink-0 bg-card border border-border rounded-lg p-6 w-32 h-20 flex items-center justify-center hover:shadow-md transition-shadow"
+                >
+                  <img 
+                    src={`https://via.placeholder.com/120x60/f1f5f9/64748b?text=${encodeURIComponent(brand)}`}
+                    alt={`${brand} Logo`}
+                    className="max-w-full max-h-full object-contain"
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </div>
