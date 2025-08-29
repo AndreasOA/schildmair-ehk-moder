@@ -22,6 +22,7 @@ export default defineConfig({
       '@': resolve(projectRoot, 'src')
     }
   },
+  base: "./",
   server: {
     host: true,
     port: 5000
