@@ -6,6 +6,10 @@
     @apply border-border;
   }
   
+  html {
+    scroll-behavior: smooth;
+  }
+  
   body {
     font-family: 'Inter', sans-serif;
   }
@@ -14,6 +18,10 @@
 @layer utilities {
   .animate-scroll {
     animation: scroll 30s linear infinite;
+  }
+  
+  .scroll-offset {
+    scroll-margin-top: 4rem;
   }
   
   @keyframes scroll {
