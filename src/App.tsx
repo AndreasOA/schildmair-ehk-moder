@@ -233,7 +233,7 @@ function App() {
       </section>
 
       {/* Partner Brands */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-background overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
@@ -244,15 +244,36 @@ function App() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-            {partnerBrands.map((brand, index) => (
-              <div 
-                key={index} 
-                className="bg-card border border-border rounded-lg p-4 flex items-center justify-center hover:shadow-md transition-shadow"
-              >
-                <span className="text-foreground font-medium text-center">{brand}</span>
-              </div>
-            ))}
+          {/* Moving Logo Strip */}
+          <div className="relative">
+            <div className="flex animate-scroll space-x-8">
+              {/* First set of logos */}
+              {partnerBrands.map((brand, index) => (
+                <div 
+                  key={`first-${index}`} 
+                  className="flex-shrink-0 bg-card border border-border rounded-lg p-6 w-32 h-20 flex items-center justify-center hover:shadow-md transition-shadow"
+                >
+                  <img 
+                    src={`https://via.placeholder.com/120x60/f1f5f9/64748b?text=${encodeURIComponent(brand)}`}
+                    alt={`${brand} Logo`}
+                    className="max-w-full max-h-full object-contain"
+                  />
+                </div>
+              ))}
+              {/* Duplicate set for seamless loop */}
+              {partnerBrands.map((brand, index) => (
+                <div 
+                  key={`second-${index}`} 
+                  className="flex-shrink-0 bg-card border border-border rounded-lg p-6 w-32 h-20 flex items-center justify-center hover:shadow-md transition-shadow"
+                >
+                  <img 
+                    src={`https://via.placeholder.com/120x60/f1f5f9/64748b?text=${encodeURIComponent(brand)}`}
+                    alt={`${brand} Logo`}
+                    className="max-w-full max-h-full object-contain"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
