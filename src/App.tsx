@@ -160,11 +160,7 @@ function App() {
                 </a>
               </Button>
               <Button variant="outline" size="lg" className="text-lg px-8" asChild>
-                <a 
-                  href="https://www.google.com/maps/place/Gärtnerstraße+9-11,+4600+Wels,+Austria" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                >
+                <a href="#contact">
                   <MapPin className="mr-2" size={20} />
                   Besuchen Sie uns
                 </a>
@@ -862,6 +858,27 @@ function App() {
 
                 <Separator />
 
+                {/* Interactive Map */}
+                <div>
+                  <h4 className="font-semibold mb-3">Standort auf der Karte</h4>
+                  <div className="w-full h-64 bg-muted/30 rounded-lg overflow-hidden relative">
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2654.123456789!2d14.030123!3d48.161234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4771f4a123456789%3A0x123456789abcdef0!2sG%C3%A4rtnerstra%C3%9Fe%209-11%2C%204600%20Wels%2C%20Austria!5e0!3m2!1sde!2sat!4v1234567890123!5m2!1sde!2sat"
+                      width="100%"
+                      height="100%"
+                      style={{ border: 0 }}
+                      allowFullScreen={true}
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      title="Schildmair Standort Gärtnerstraße 9-11, 4600 Wels"
+                      className="w-full h-full"
+                    ></iframe>
+                    <div className="absolute inset-0 bg-transparent pointer-events-none border-2 border-border rounded-lg"></div>
+                  </div>
+                </div>
+
+                <Separator />
+
                 <div>
                   <Button className="w-full" asChild>
                     <a 
@@ -877,45 +894,7 @@ function App() {
               </CardContent>
             </Card>
 
-            {/* Interactive Map */}
-            <Card className="p-0 overflow-hidden">
-              <CardHeader className="p-6 pb-0">
-                <CardTitle>Standort auf der Karte</CardTitle>
-              </CardHeader>
-              <CardContent className="p-6 pt-4">
-                <div className="w-full h-80 bg-muted/30 rounded-lg overflow-hidden relative">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2654.123456789!2d14.030123!3d48.161234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4771f4a123456789%3A0x123456789abcdef0!2sG%C3%A4rtnerstra%C3%9Fe%209-11%2C%204600%20Wels%2C%20Austria!5e0!3m2!1sde!2sat!4v1234567890123!5m2!1sde!2sat"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen={true}
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title="Schildmair Standort Gärtnerstraße 9-11, 4600 Wels"
-                    className="w-full h-full"
-                  ></iframe>
-                  <div className="absolute inset-0 bg-transparent pointer-events-none border-2 border-border rounded-lg"></div>
-                </div>
-                <div className="mt-4 text-center">
-                  <p className="text-sm text-muted-foreground mb-3">
-                    Gärtnerstraße 9–11, 4600 Wels, Österreich
-                  </p>
-                  <Button variant="outline" size="sm" asChild>
-                    <a 
-                      href="https://www.google.com/maps/place/Gärtnerstraße+9-11,+4600+Wels,+Austria" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                    >
-                      In Google Maps öffnen
-                    </a>
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          <div className="mt-12">
+            {/* Contact Information */}
             <Card className="p-8">
               <CardHeader>
                 <CardTitle>Kontaktieren Sie uns</CardTitle>
