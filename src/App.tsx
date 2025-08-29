@@ -77,6 +77,9 @@ function App() {
                 <a href="#services" className="text-foreground hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">
                   Leistungen
                 </a>
+                <a href="#gallery" className="text-foreground hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                  Geschäft
+                </a>
                 <a href="#about" className="text-foreground hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">
                   Über uns
                 </a>
@@ -110,6 +113,9 @@ function App() {
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-background border-t border-border">
               <a href="#services" className="text-foreground hover:text-primary block px-3 py-2 rounded-md text-base font-medium">
                 Leistungen
+              </a>
+              <a href="#gallery" className="text-foreground hover:text-primary block px-3 py-2 rounded-md text-base font-medium">
+                Geschäft
               </a>
               <a href="#about" className="text-foreground hover:text-primary block px-3 py-2 rounded-md text-base font-medium">
                 Über uns
@@ -283,6 +289,95 @@ function App() {
                   />
                 </div>
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Store Gallery Section */}
+      <section id="gallery" className="py-20 bg-background scroll-offset">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+              Unser Geschäft
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Besuchen Sie uns vor Ort und erleben Sie unser umfangreiches Sortiment
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Placeholder images for store */}
+            <div className="bg-muted/30 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+              <img 
+                src="https://via.placeholder.com/400x300/f1f5f9/64748b?text=Geschäftsfront"
+                alt="Schildmair Geschäftsfront"
+                className="w-full h-64 object-cover"
+              />
+              <div className="p-4">
+                <h3 className="font-semibold mb-2">Geschäftsfront</h3>
+                <p className="text-sm text-muted-foreground">Unsere Geschäftsräume in der Gärtnerstraße</p>
+              </div>
+            </div>
+
+            <div className="bg-muted/30 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+              <img 
+                src="https://via.placeholder.com/400x300/f1f5f9/64748b?text=Werkzeugabteilung"
+                alt="Werkzeugabteilung"
+                className="w-full h-64 object-cover"
+              />
+              <div className="p-4">
+                <h3 className="font-semibold mb-2">Werkzeugabteilung</h3>
+                <p className="text-sm text-muted-foreground">Professionelles Werkzeug für jeden Bedarf</p>
+              </div>
+            </div>
+
+            <div className="bg-muted/30 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+              <img 
+                src="https://via.placeholder.com/400x300/f1f5f9/64748b?text=Haushaltsabteilung"
+                alt="Haushaltsabteilung"
+                className="w-full h-64 object-cover"
+              />
+              <div className="p-4">
+                <h3 className="font-semibold mb-2">Haushaltsabteilung</h3>
+                <p className="text-sm text-muted-foreground">Hochwertige Küchen- und Haushaltsartikel</p>
+              </div>
+            </div>
+
+            <div className="bg-muted/30 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+              <img 
+                src="https://via.placeholder.com/400x300/f1f5f9/64748b?text=Beratung"
+                alt="Kundenberatung"
+                className="w-full h-64 object-cover"
+              />
+              <div className="p-4">
+                <h3 className="font-semibold mb-2">Fachkundige Beratung</h3>
+                <p className="text-sm text-muted-foreground">Persönliche Beratung durch unser Fachteam</p>
+              </div>
+            </div>
+
+            <div className="bg-muted/30 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+              <img 
+                src="https://via.placeholder.com/400x300/f1f5f9/64748b?text=Lager"
+                alt="Lagerbereich"
+                className="w-full h-64 object-cover"
+              />
+              <div className="p-4">
+                <h3 className="font-semibold mb-2">Lagerbereich</h3>
+                <p className="text-sm text-muted-foreground">Umfangreiches Sortiment auf Lager</p>
+              </div>
+            </div>
+
+            <div className="bg-muted/30 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+              <img 
+                src="https://via.placeholder.com/400x300/f1f5f9/64748b?text=Parkplatz"
+                alt="Parkplatz"
+                className="w-full h-64 object-cover"
+              />
+              <div className="p-4">
+                <h3 className="font-semibold mb-2">Gratis Parkplatz</h3>
+                <p className="text-sm text-muted-foreground">Kostenlose Parkplätze direkt vor dem Geschäft</p>
+              </div>
             </div>
           </div>
         </div>
@@ -485,6 +580,7 @@ function App() {
               <h4 className="font-semibold mb-4">Schnellzugriffe</h4>
               <ul className="space-y-2 text-primary-foreground/80">
                 <li><a href="#services" className="hover:text-primary-foreground transition-colors">Leistungen</a></li>
+                <li><a href="#gallery" className="hover:text-primary-foreground transition-colors">Geschäft</a></li>
                 <li><a href="#about" className="hover:text-primary-foreground transition-colors">Über uns</a></li>
                 <li><a href="#contact" className="hover:text-primary-foreground transition-colors">Kontakt</a></li>
                 <li><a href="https://www.sowi-shop.at/c/aktion" target="_blank" rel="noopener noreferrer" className="hover:text-primary-foreground transition-colors">Onlineshop</a></li>
