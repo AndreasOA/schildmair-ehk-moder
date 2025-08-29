@@ -386,16 +386,19 @@ function App() {
       {/* About Section */}
       <section id="about" className="py-20 bg-muted/20 scroll-offset">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
+              Über Schildmair
+            </h2>
+            <p className="text-lg text-muted-foreground mb-6 max-w-3xl mx-auto">
+              Als traditioneller Familienbetrieb in Wels stehen wir seit Generationen für Qualität, 
+              Fachkompetenz und Verlässlichkeit. Unser Motto "Der Eisenwarenhändler Ihres Vertrauens" 
+              ist nicht nur ein Versprechen, sondern gelebte Tradition.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-16">
             <div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
-                Über Schildmair
-              </h2>
-              <p className="text-lg text-muted-foreground mb-6">
-                Als traditioneller Familienbetrieb in Wels stehen wir seit Generationen für Qualität, 
-                Fachkompetenz und Verlässlichkeit. Unser Motto "Der Eisenwarenhändler Ihres Vertrauens" 
-                ist nicht nur ein Versprechen, sondern gelebte Tradition.
-              </p>
               <p className="text-lg text-muted-foreground mb-8">
                 Von hochwertigen Werkzeugen über Haushaltsartikel bis hin zu modernem Onlineshopping 
                 - wir verbinden Tradition mit Innovation für optimalen Kundenservice.
@@ -427,6 +430,178 @@ function App() {
               <p className="text-center text-muted-foreground mt-4">
                 Qualität, Fachkompetenz und Verlässlichkeit in allem was wir tun.
               </p>
+            </div>
+          </div>
+
+          {/* Timeline Section */}
+          <div className="mt-20">
+            <h3 className="text-2xl sm:text-3xl font-bold text-center text-foreground mb-12">
+              Unsere Geschichte
+            </h3>
+            
+            <div className="relative">
+              {/* Timeline line */}
+              <div className="absolute left-1/2 transform -translate-x-px w-0.5 bg-primary h-full"></div>
+              
+              <div className="space-y-12">
+                {/* 1936 */}
+                <div className="relative flex items-center">
+                  <div className="flex-1 pr-8 text-right">
+                    <Card className="ml-auto max-w-md">
+                      <CardHeader>
+                        <Badge variant="secondary" className="w-fit ml-auto">1936</Badge>
+                        <CardTitle className="text-lg">Gründung</CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <p className="text-sm text-muted-foreground">
+                          Gründung durch Herrn Schildmair Franz. Das Unternehmen handelte mit natürlichem Mineralwasser und Jodsalz. 
+                          Die gewerbliche Eintragung erfolgte am 22.07.1936.
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </div>
+                  <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background"></div>
+                  <div className="flex-1 pl-8"></div>
+                </div>
+
+                {/* 1945 */}
+                <div className="relative flex items-center">
+                  <div className="flex-1 pr-8"></div>
+                  <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background"></div>
+                  <div className="flex-1 pl-8">
+                    <Card className="max-w-md">
+                      <CardHeader>
+                        <Badge variant="secondary" className="w-fit">1945</Badge>
+                        <CardTitle className="text-lg">Neustart nach dem Krieg</CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <p className="text-sm text-muted-foreground">
+                          Nach der Heimkehr aus dem Krieg wurde die neue Firma Schildmair gegründet, die sich mit dem Verkauf von 
+                          landwirtschaftlichen Sommer- und Wintergeräten beschäftigte. Entwicklung zum österreichweiten Großhandel.
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </div>
+
+                {/* 1965 */}
+                <div className="relative flex items-center">
+                  <div className="flex-1 pr-8 text-right">
+                    <Card className="ml-auto max-w-md">
+                      <CardHeader>
+                        <Badge variant="secondary" className="w-fit ml-auto">1965</Badge>
+                        <CardTitle className="text-lg">Erstes Handelsgeschäft</CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <p className="text-sm text-muted-foreground">
+                          Gründung des Handelsgeschäftes für Eisenwaren mit Farbenabteilung und Haushaltswaren 
+                          in der Grieskirchner Straße 3 im Oktober 1965.
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </div>
+                  <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background"></div>
+                  <div className="flex-1 pl-8"></div>
+                </div>
+
+                {/* 1971 */}
+                <div className="relative flex items-center">
+                  <div className="flex-1 pr-8"></div>
+                  <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background"></div>
+                  <div className="flex-1 pl-8">
+                    <Card className="max-w-md">
+                      <CardHeader>
+                        <Badge variant="secondary" className="w-fit">1971</Badge>
+                        <CardTitle className="text-lg">Übernahme durch Kurt Schildmair</CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <p className="text-sm text-muted-foreground">
+                          Übernahme durch Herrn Schildmair Kurt.
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </div>
+
+                {/* 1978-1982 Expansion */}
+                <div className="relative flex items-center">
+                  <div className="flex-1 pr-8 text-right">
+                    <Card className="ml-auto max-w-md">
+                      <CardHeader>
+                        <Badge variant="secondary" className="w-fit ml-auto">1978-1982</Badge>
+                        <CardTitle className="text-lg">Expansion</CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <p className="text-sm text-muted-foreground">
+                          Übernahme der Maxglaner Eisenhandlung in Salzburg (1978), der Firma Schrems in Salzburg (1980) 
+                          und der Firma Brunbauer in Linz-Urfahr (1982). Übersiedlung zur Grieskirchner Straße 6.
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </div>
+                  <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background"></div>
+                  <div className="flex-1 pl-8"></div>
+                </div>
+
+                {/* 1988 */}
+                <div className="relative flex items-center">
+                  <div className="flex-1 pr-8"></div>
+                  <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background"></div>
+                  <div className="flex-1 pl-8">
+                    <Card className="max-w-md">
+                      <CardHeader>
+                        <Badge variant="secondary" className="w-fit">1988</Badge>
+                        <CardTitle className="text-lg">Nächste Generation</CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <p className="text-sm text-muted-foreground">
+                          Eintritt von Herrn Schildmair Viktor in das Familienunternehmen.
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </div>
+
+                {/* 1991-1998 Modernisierung */}
+                <div className="relative flex items-center">
+                  <div className="flex-1 pr-8 text-right">
+                    <Card className="ml-auto max-w-md">
+                      <CardHeader>
+                        <Badge variant="secondary" className="w-fit ml-auto">1991-1998</Badge>
+                        <CardTitle className="text-lg">Modernisierung</CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <p className="text-sm text-muted-foreground">
+                          Errichtung der Küchenboutique (1991). Erwerb des ehemaligen Elektrolux-Objektes in der Gärtnerstraße 
+                          mit 9.000 m² Gesamtfläche (1997) und Umbau auf 1.000m² Verkaufsfläche (1998).
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </div>
+                  <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background"></div>
+                  <div className="flex-1 pl-8"></div>
+                </div>
+
+                {/* 2009-2015 Spezialisierung */}
+                <div className="relative flex items-center">
+                  <div className="flex-1 pr-8"></div>
+                  <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background"></div>
+                  <div className="flex-1 pl-8">
+                    <Card className="max-w-md">
+                      <CardHeader>
+                        <Badge variant="secondary" className="w-fit">2009-2015</Badge>
+                        <CardTitle className="text-lg">Service-Erweiterung</CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <p className="text-sm text-muted-foreground">
+                          Übernahme der Firma GaMo Kleinmotorgeräte mit Werkstatt (2009). 
+                          2015 wurde diese Zweigstelle in die Gärtnerstraße übersiedelt.
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
