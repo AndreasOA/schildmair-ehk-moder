@@ -831,25 +831,6 @@ function App() {
                 </div>
                 
                 <Separator />
-                
-                <div>
-                  <h4 className="font-semibold mb-3 flex items-center">
-                    <Clock className="text-primary mr-2" size={20} />
-                    Öffnungszeiten
-                  </h4>
-                  <div className="space-y-2 text-muted-foreground">
-                    <div className="flex justify-between">
-                      <span>Montag - Freitag:</span>
-                      <span>08:00-12:00 & 14:00-18:00</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Samstag:</span>
-                      <span>08:30-12:00</span>
-                    </div>
-                  </div>
-                </div>
-
-                <Separator />
 
                 <div className="flex items-center">
                   <Car className="text-accent mr-3" size={20} />
@@ -875,21 +856,6 @@ function App() {
                     ></iframe>
                     <div className="absolute inset-0 bg-transparent pointer-events-none border-2 border-border rounded-lg"></div>
                   </div>
-                </div>
-
-                <Separator />
-
-                <div>
-                  <Button className="w-full" asChild>
-                    <a 
-                      href="https://www.google.com/maps/place/Gärtnerstraße+9-11,+4600+Wels,+Austria" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                    >
-                      <MapPin className="mr-2" size={16} />
-                      Route planen
-                    </a>
-                  </Button>
                 </div>
               </CardContent>
             </Card>
@@ -922,6 +888,25 @@ function App() {
                     <div>
                       <p className="font-medium">E-Mail</p>
                       <p className="text-muted-foreground">office@schildmair.at</p>
+                    </div>
+                  </div>
+                </div>
+
+                <Separator />
+                
+                <div>
+                  <h4 className="font-semibold mb-3 flex items-center">
+                    <Clock className="text-primary mr-2" size={20} />
+                    Öffnungszeiten
+                  </h4>
+                  <div className="space-y-2 text-muted-foreground">
+                    <div className="flex justify-between">
+                      <span>Montag - Freitag:</span>
+                      <span>08:00-12:00 & 14:00-18:00</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span>Samstag:</span>
+                      <span>08:30-12:00</span>
                     </div>
                   </div>
                 </div>
