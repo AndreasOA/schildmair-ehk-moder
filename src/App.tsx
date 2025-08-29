@@ -10,24 +10,56 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 import { 
-  Phone, 
-  Mail, 
-  MapPin, 
-  Clock, 
-  Wrench, 
-  House, 
-  Scissors, 
-  ShoppingCart, 
-  Users, 
+  Phone,
+  Mail,
+  MapPin,
+  Clock,
+  Wrench,
+  Home,
+  Scissors,
+  ShoppingCart,
+  Users,
   Car,
   GraduationCap,
   Facebook,
   Instagram,
   Menu,
   X,
-  CaretDown
-} from '@phosphor-icons/react'
-import schildmairLogo from '@/assets/images/schildmair-logo.svg'
+  ChevronDown
+} from 'lucide-react'
+import schildmairLogo from '@/assets/images/logo.png'
+import frontStore from '@/assets/images/front_gr.jpg'
+import backStore from '@/assets/images/back_gr.jpg'
+import productB1 from '@/assets/images/b1.png'
+import productB2 from '@/assets/images/b2.png'
+import productB3 from '@/assets/images/b3.png'
+import productB6 from '@/assets/images/b6.png'
+import productB7 from '@/assets/images/b7.png'
+
+// Company logos
+import stihlLogo from '@/assets/companies/2560px_Stihl_Logo_svg_acdfede2b1.png'
+import fellerLogo from '@/assets/companies/29166.png'
+import feinLogo from '@/assets/companies/FEIN_RGB.svg.png'
+import metaboLogo from '@/assets/companies/images_metabo.png'
+import boschLogo from '@/assets/companies/images.png'
+import kitchenaidLogo from '@/assets/companies/Kitchenaid_logo.svg.png'
+import kranzleLogo from '@/assets/companies/Kranzle-Logo.webp'
+import bbqKitchenLogo from '@/assets/companies/Logo_BBQ Kitchen_hoch.png'
+import kelomatLogo from '@/assets/companies/Logo-Riese-Kelomat-GmbH_4c.png'
+import makitaLogo from '@/assets/companies/makita.png'
+import milwaukeeLogo from '@/assets/companies/Milwaukee_Logo.svg'
+import napoleonLogo from '@/assets/companies/napoleon-logo-rgb-standard.jpg'
+import petromaxLogo from '@/assets/companies/Petromax.webp'
+import ritzenhoffLogo from '@/assets/companies/RitzenhoffBreker.png'
+import rottnerLogo from '@/assets/companies/rottner-tresor-logo-web-big.jpg'
+import rukoLogo from '@/assets/companies/ruko_400px.jpg'
+import schullerLogo from '@/assets/companies/Schuller_Eh_klar_GmbH_lo1.jpg'
+import solaLogo from '@/assets/companies/sola_inverted.png'
+import staedterLogo from '@/assets/companies/Staedter_Logo_4c_NEU_141111.jpg'
+import leCreusetLogo from '@/assets/companies/store_Le Creuset20220822161200.png'
+import tormekLogo from '@/assets/companies/tormek.png'
+import victorinoxLogo from '@/assets/companies/victorinox.png'
+import wmfLogo from '@/assets/companies/WMF-Logo.svg.png'
 
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -39,7 +71,7 @@ function App() {
       description: 'Zuverlässiger Partner für Werkzeug, kleine Eisenwaren, Baubedarf, Elektrotechnik und Gartengeräte'
     },
     {
-      icon: House,
+      icon: Home,
       title: 'Küchen- & Haushaltsartikel',
       description: 'Umfangreiches Sortiment von Küchenmaschinen, Elektrokleingeräten, Kochgeschirr und Geschirr'
     },
@@ -56,15 +88,35 @@ function App() {
   ]
 
   const targetGroups = [
-    { icon: Users, title: 'Privatkunden', description: 'Für alle Haushalts- und Gartenbedürfnisse' },
-    { icon: Wrench, title: 'Handwerker', description: 'Professionelles Werkzeug und Materialien' },
-    { icon: ShoppingCart, title: 'Industrie & Gewerbe', description: 'Spezielle Kanäle und Großmengen' }
+  { icon: Users, title: 'Privatkunden', description: 'Für alle Haushalts- und Gartenbedürfnisse' },
+  { icon: Wrench, title: 'Handwerker', description: 'Professionelles Werkzeug und Materialien' },
+  { icon: ShoppingCart, title: 'Industrie & Gewerbe', description: 'Spezielle Kanäle und Großmengen' }
   ]
 
   const partnerBrands = [
-    'Bosch', 'Makita', 'DeWalt', 'Festool', 'Metabo', 'Hilti',
-    'WMF', 'Fissler', 'Zwilling', 'KitchenAid', 'Braun', 'Siemens',
-    'Gardena', 'Husqvarna', 'Stihl', 'Kärcher', 'Weber', 'Petromax'
+    { name: 'Stihl', logo: stihlLogo },
+    { name: 'Feller', logo: fellerLogo },
+    { name: 'FEIN', logo: feinLogo },
+    { name: 'Metabo', logo: metaboLogo },
+    { name: 'Bosch', logo: boschLogo },
+    { name: 'KitchenAid', logo: kitchenaidLogo },
+    { name: 'Kränzle', logo: kranzleLogo },
+    { name: 'BBQ Kitchen', logo: bbqKitchenLogo },
+    { name: 'Kelomat', logo: kelomatLogo },
+    { name: 'Makita', logo: makitaLogo },
+    { name: 'Milwaukee', logo: milwaukeeLogo },
+    { name: 'Napoleon', logo: napoleonLogo },
+    { name: 'Petromax', logo: petromaxLogo },
+    { name: 'Ritzenhoff & Breker', logo: ritzenhoffLogo },
+    { name: 'Rottner', logo: rottnerLogo },
+    { name: 'RUKO', logo: rukoLogo },
+    { name: 'Schüller', logo: schullerLogo },
+    { name: 'SOLA', logo: solaLogo },
+    { name: 'Städter', logo: staedterLogo },
+    { name: 'Le Creuset', logo: leCreusetLogo },
+    { name: 'Tormek', logo: tormekLogo },
+    { name: 'Victorinox', logo: victorinoxLogo },
+    { name: 'WMF', logo: wmfLogo }
   ]
 
   return (
@@ -77,7 +129,7 @@ function App() {
               <img 
                 src={schildmairLogo} 
                 alt="Schildmair Logo" 
-                className="h-10 w-auto"
+                className="h-12 sm:h-10 w-auto max-w-none"
               />
             </div>
             
@@ -100,7 +152,7 @@ function App() {
                   <DropdownMenuTrigger asChild>
                     <Button>
                       Onlineshop
-                      <CaretDown className="ml-1" size={16} />
+                      <ChevronDown className="ml-1" size={16} />
                     </Button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent align="end">
@@ -123,10 +175,21 @@ function App() {
             <div className="md:hidden">
               <Button 
                 variant="ghost" 
-                size="sm"
+                size="lg"
+                className="p-4 h-auto w-auto"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               >
-                {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                {mobileMenuOpen ? (
+                  <X 
+                    size={48}
+                    style={{ width: '24px', height: '24px', minWidth: '24px', minHeight: '24px' }}
+                  />
+                ) : (
+                  <Menu 
+                    size={48}
+                    style={{ width: '24px', height: '24px', minWidth: '24px', minHeight: '24px' }}
+                  />
+                )}
               </Button>
             </div>
           </div>
@@ -153,7 +216,7 @@ function App() {
                   <DropdownMenuTrigger asChild>
                     <Button className="w-full">
                       Onlineshop
-                      <CaretDown className="ml-1" size={16} />
+                      <ChevronDown className="ml-1" size={16} />
                     </Button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent align="center" className="w-56">
@@ -186,7 +249,7 @@ function App() {
               <img 
                 src={schildmairLogo} 
                 alt="Schildmair EHK Sowi Logo" 
-                className="h-16 w-auto"
+                className="sm:h-28 w-auto h-auto"
               />
             </div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6">
@@ -205,7 +268,7 @@ function App() {
                   <Button size="lg" className="text-lg px-8">
                     <ShoppingCart className="mr-2" size={20} />
                     Zum Onlineshop
-                    <CaretDown className="ml-2" size={16} />
+                    <ChevronDown className="ml-2" size={16} />
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="center" className="w-64">
@@ -231,6 +294,65 @@ function App() {
               </Button>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Partner Brands */}
+      <section className="pt-20 bg-background overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+              Unsere Markenpartner
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Qualität durch bewährte Marken und langjährige Partnerschaften
+            </p>
+          </div>
+        </div>
+
+        {/* Moving Logo Strip - Full Width */}
+        <div className="relative overflow-hidden w-full">
+          <div className="flex animate-infinite-scroll space-x-8 w-max">
+              {/* First set of logos */}
+              {partnerBrands.map((brand, index) => (
+                <div 
+                  key={`first-${index}`} 
+                  className="flex-shrink-0 bg-card border border-border rounded-lg p-8 w-48 h-32 flex items-center justify-center hover:shadow-md transition-shadow"
+                >
+                  <img 
+                    src={brand.logo}
+                    alt={`${brand.name} Logo`}
+                    className="max-w-full max-h-full object-contain"
+                  />
+                </div>
+              ))}
+              {/* Duplicate set for seamless loop */}
+              {partnerBrands.map((brand, index) => (
+                <div 
+                  key={`second-${index}`} 
+                  className="flex-shrink-0 bg-card border border-border rounded-lg p-8 w-48 h-32 flex items-center justify-center hover:shadow-md transition-shadow"
+                >
+                  <img 
+                    src={brand.logo}
+                    alt={`${brand.name} Logo`}
+                    className="max-w-full max-h-full object-contain"
+                  />
+                </div>
+              ))}
+              {/* Third set for extra seamless loop */}
+              {partnerBrands.map((brand, index) => (
+                <div 
+                  key={`third-${index}`} 
+                  className="flex-shrink-0 bg-card border border-border rounded-lg p-8 w-48 h-32 flex items-center justify-center hover:shadow-md transition-shadow"
+                >
+                  <img 
+                    src={brand.logo}
+                    alt={`${brand.name} Logo`}
+                    className="max-w-full max-h-full object-contain"
+                  />
+                </div>
+              ))}
+            </div>
         </div>
       </section>
 
@@ -287,7 +409,7 @@ function App() {
       </section>
 
       {/* Store Gallery Section */}
-      <section id="gallery" className="py-20 bg-background scroll-offset">
+      <section id="gallery" className="py-20 bg-muted/20 scroll-offset">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
@@ -302,7 +424,7 @@ function App() {
             {/* Placeholder images for store */}
             <div className="bg-muted/30 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
               <img 
-                src="https://via.placeholder.com/400x300/f1f5f9/64748b?text=Geschäftsfront"
+                src={frontStore}
                 alt="Schildmair Geschäftsfront"
                 className="w-full h-64 object-cover"
               />
@@ -314,7 +436,7 @@ function App() {
 
             <div className="bg-muted/30 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
               <img 
-                src="https://via.placeholder.com/400x300/f1f5f9/64748b?text=Werkzeugabteilung"
+                src={productB1}
                 alt="Werkzeugabteilung"
                 className="w-full h-64 object-cover"
               />
@@ -326,7 +448,7 @@ function App() {
 
             <div className="bg-muted/30 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
               <img 
-                src="https://via.placeholder.com/400x300/f1f5f9/64748b?text=Haushaltsabteilung"
+                src={productB2}
                 alt="Haushaltsabteilung"
                 className="w-full h-64 object-cover"
               />
@@ -338,31 +460,31 @@ function App() {
 
             <div className="bg-muted/30 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
               <img 
-                src="https://via.placeholder.com/400x300/f1f5f9/64748b?text=Beratung"
-                alt="Kundenberatung"
+                src={productB6}
+                alt="Rasenmäher & Werkzeug"
                 className="w-full h-64 object-cover"
               />
               <div className="p-4">
-                <h3 className="font-semibold mb-2">Fachkundige Beratung</h3>
-                <p className="text-sm text-muted-foreground">Persönliche Beratung durch unser Fachteam</p>
+                <h3 className="font-semibold mb-2">Rasenmäher & Reparatur-Service</h3>
+                <p className="text-sm text-muted-foreground">Professionelle Reparatur und Wartung von Gartengeräten</p>
               </div>
             </div>
 
             <div className="bg-muted/30 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
               <img 
-                src="https://via.placeholder.com/400x300/f1f5f9/64748b?text=Lager"
-                alt="Lagerbereich"
+                src={productB7}
+                alt="Gläser & Geschirr"
                 className="w-full h-64 object-cover"
               />
               <div className="p-4">
-                <h3 className="font-semibold mb-2">Lagerbereich</h3>
-                <p className="text-sm text-muted-foreground">Umfangreiches Sortiment auf Lager</p>
+                <h3 className="font-semibold mb-2">Gläser & Geschirr-Kollektion</h3>
+                <p className="text-sm text-muted-foreground">Umfangreiche Auswahl an Gläsern für jeden Anlass</p>
               </div>
             </div>
 
             <div className="bg-muted/30 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
               <img 
-                src="https://via.placeholder.com/400x300/f1f5f9/64748b?text=Parkplatz"
+                src={backStore}
                 alt="Parkplatz"
                 className="w-full h-64 object-cover"
               />
@@ -376,7 +498,7 @@ function App() {
       </section>
 
       {/* Target Groups */}
-      <section className="py-20 bg-muted/20">
+      <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
@@ -399,52 +521,6 @@ function App() {
                 </CardContent>
               </Card>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Partner Brands */}
-      <section className="py-20 bg-background overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-              Unsere Markenpartner
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              Qualität durch bewährte Marken und langjährige Partnerschaften
-            </p>
-          </div>
-
-          {/* Moving Logo Strip */}
-          <div className="relative">
-            <div className="flex animate-scroll space-x-8">
-              {/* First set of logos */}
-              {partnerBrands.map((brand, index) => (
-                <div 
-                  key={`first-${index}`} 
-                  className="flex-shrink-0 bg-card border border-border rounded-lg p-6 w-32 h-20 flex items-center justify-center hover:shadow-md transition-shadow"
-                >
-                  <img 
-                    src={`https://via.placeholder.com/120x60/f1f5f9/64748b?text=${encodeURIComponent(brand)}`}
-                    alt={`${brand} Logo`}
-                    className="max-w-full max-h-full object-contain"
-                  />
-                </div>
-              ))}
-              {/* Duplicate set for seamless loop */}
-              {partnerBrands.map((brand, index) => (
-                <div 
-                  key={`second-${index}`} 
-                  className="flex-shrink-0 bg-card border border-border rounded-lg p-6 w-32 h-20 flex items-center justify-center hover:shadow-md transition-shadow"
-                >
-                  <img 
-                    src={`https://via.placeholder.com/120x60/f1f5f9/64748b?text=${encodeURIComponent(brand)}`}
-                    alt={`${brand} Logo`}
-                    className="max-w-full max-h-full object-contain"
-                  />
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </section>

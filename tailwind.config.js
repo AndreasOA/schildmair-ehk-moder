@@ -100,6 +100,15 @@ const defaultTheme = {
       "2xl": "var(--radius-2xl)",
       full: "var(--radius-full)",
     },
+    animation: {
+      'infinite-scroll': 'infinite-scroll 120s linear infinite',
+    },
+    keyframes: {
+      'infinite-scroll': {
+        '0%': { transform: 'translateX(0)' },
+        '100%': { transform: 'translateX(-33.333%)' },
+      },
+    },
   },
   spacing: {
     px: "var(--size-px)",
