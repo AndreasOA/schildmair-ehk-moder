@@ -83,7 +83,11 @@ function App() {
                 <a href="#contact" className="text-foreground hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">
                   Kontakt
                 </a>
-                <Button>Onlineshop</Button>
+                <Button asChild>
+                  <a href="https://www.sowi-shop.at/c/aktion" target="_blank" rel="noopener noreferrer">
+                    Onlineshop
+                  </a>
+                </Button>
               </div>
             </div>
 
@@ -114,7 +118,11 @@ function App() {
                 Kontakt
               </a>
               <div className="px-3 py-2">
-                <Button className="w-full">Onlineshop</Button>
+                <Button className="w-full" asChild>
+                  <a href="https://www.sowi-shop.at/c/aktion" target="_blank" rel="noopener noreferrer">
+                    Onlineshop
+                  </a>
+                </Button>
               </div>
             </div>
           </div>
@@ -139,9 +147,11 @@ function App() {
               Traditioneller Familienbetrieb mit modernem Service.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="text-lg px-8">
-                <ShoppingCart className="mr-2" size={20} />
-                Zum Onlineshop
+              <Button size="lg" className="text-lg px-8" asChild>
+                <a href="https://www.sowi-shop.at/c/aktion" target="_blank" rel="noopener noreferrer">
+                  <ShoppingCart className="mr-2" size={20} />
+                  Zum Onlineshop
+                </a>
               </Button>
               <Button variant="outline" size="lg" className="text-lg px-8">
                 <MapPin className="mr-2" size={20} />
@@ -477,7 +487,7 @@ function App() {
                 <li><a href="#services" className="hover:text-primary-foreground transition-colors">Leistungen</a></li>
                 <li><a href="#about" className="hover:text-primary-foreground transition-colors">Über uns</a></li>
                 <li><a href="#contact" className="hover:text-primary-foreground transition-colors">Kontakt</a></li>
-                <li><a href="#" className="hover:text-primary-foreground transition-colors">Onlineshop</a></li>
+                <li><a href="https://www.sowi-shop.at/c/aktion" target="_blank" rel="noopener noreferrer" className="hover:text-primary-foreground transition-colors">Onlineshop</a></li>
               </ul>
             </div>
             
