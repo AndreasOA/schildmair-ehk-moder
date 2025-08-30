@@ -27,6 +27,11 @@ import {
   X,
   ChevronDown
 } from 'lucide-react'
+
+// Import page components
+import Karriere from '@/components/pages/Karriere'
+import Datenschutz from '@/components/pages/Datenschutz'
+import Impressum from '@/components/pages/Impressum'
 import schildmairLogo from '@/assets/images/logo.png'
 import frontStore from '@/assets/images/front_gr.jpg'
 import backStore from '@/assets/images/back_gr.jpg'
@@ -63,6 +68,24 @@ import wmfLogo from '@/assets/companies/WMF-Logo.svg.png'
 
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [currentPage, setCurrentPage] = useState<'home' | 'karriere' | 'datenschutz' | 'impressum'>('home')
+
+  // Handle page navigation
+  const handlePageChange = (page: 'home' | 'karriere' | 'datenschutz' | 'impressum') => {
+    setCurrentPage(page)
+    setMobileMenuOpen(false) // Close mobile menu when navigating
+  }
+
+  // Render the appropriate page
+  if (currentPage === 'karriere') {
+    return <Karriere onBack={() => handlePageChange('home')} />
+  }
+  if (currentPage === 'datenschutz') {
+    return <Datenschutz onBack={() => handlePageChange('home')} />
+  }
+  if (currentPage === 'impressum') {
+    return <Impressum onBack={() => handlePageChange('home')} />
+  }
 
   const services = [
     {
@@ -237,6 +260,31 @@ function App() {
           </div>
         )}
       </nav>
+
+      {/* Job Opening Banner */}
+      <div className="bg-gradient-to-r from-secondary to-secondary/80 text-secondary-foreground py-3">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-center text-center">
+            <div className="flex items-center space-x-3">
+              <div className="flex items-center space-x-2">
+                <Users size={20} className="hidden sm:block" />
+                <span className="text-sm font-medium">
+                  🚀 Wir suchen Verstärkung! 
+                  <span className="hidden sm:inline"> Verkäufer, Servicetechniker & Reinigungskraft gesucht</span>
+                </span>
+              </div>
+              <Button 
+                variant="ghost" 
+                size="sm" 
+                className="text-secondary-foreground hover:bg-primary hover:text-primary-foreground border border-secondary-foreground/20 hover:border-primary transition-all text-xs px-4 py-1.5 font-medium"
+                onClick={() => handlePageChange('karriere')}
+              >
+                Jetzt bewerben
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-primary/5 to-secondary/5 py-20 lg:py-32">
@@ -1145,10 +1193,30 @@ function App() {
             <div>
               <h4 className="font-semibold mb-4">Rechtliches</h4>
               <ul className="space-y-2 text-primary-foreground/80">
-                <li><a href="#" className="hover:text-primary-foreground transition-colors">Impressum</a></li>
-                <li><a href="#" className="hover:text-primary-foreground transition-colors">Datenschutz</a></li>
-                <li><a href="#" className="hover:text-primary-foreground transition-colors">AGB</a></li>
-                <li><a href="#" className="hover:text-primary-foreground transition-colors">Karriere</a></li>
+                <li>
+                  <button 
+                    onClick={() => handlePageChange('impressum')}
+                    className="hover:text-primary-foreground transition-colors text-left"
+                  >
+                    Impressum
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => handlePageChange('datenschutz')}
+                    className="hover:text-primary-foreground transition-colors text-left"
+                  >
+                    Datenschutz
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => handlePageChange('karriere')}
+                    className="hover:text-primary-foreground transition-colors text-left"
+                  >
+                    Karriere
+                  </button>
+                </li>
               </ul>
             </div>
           </div>
