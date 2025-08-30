@@ -1063,13 +1063,17 @@ function App() {
                 <div>
                   <h4 className="font-semibold mb-4">Folgen Sie uns</h4>
                   <div className="flex space-x-4">
-                    <Button variant="outline" size="sm">
-                      <Facebook className="mr-2" size={16} />
-                      Facebook
+                    <Button variant="outline" size="sm" asChild>
+                      <a href="https://www.facebook.com/schildmair/" target="_blank" rel="noopener noreferrer">
+                        <Facebook className="mr-2" size={16} />
+                        Facebook
+                      </a>
                     </Button>
-                    <Button variant="outline" size="sm">
-                      <Instagram className="mr-2" size={16} />
-                      Instagram
+                    <Button variant="outline" size="sm" asChild>
+                      <a href="https://www.instagram.com/schildmair_wels/" target="_blank" rel="noopener noreferrer">
+                        <Instagram className="mr-2" size={16} />
+                        Instagram
+                      </a>
                     </Button>
                   </div>
                 </div>
@@ -1113,11 +1117,15 @@ function App() {
                 Tradition trifft auf moderne Services.
               </p>
               <div className="flex space-x-4">
-                <Button variant="ghost" size="sm" className="text-primary-foreground hover:bg-primary-foreground/10">
-                  <Facebook size={20} />
+                <Button variant="ghost" size="sm" className="text-primary-foreground hover:bg-primary-foreground/10" asChild>
+                  <a href="https://www.facebook.com/schildmair/" target="_blank" rel="noopener noreferrer">
+                    <Facebook size={20} />
+                  </a>
                 </Button>
-                <Button variant="ghost" size="sm" className="text-primary-foreground hover:bg-primary-foreground/10">
-                  <Instagram size={20} />
+                <Button variant="ghost" size="sm" className="text-primary-foreground hover:bg-primary-foreground/10" asChild>
+                  <a href="https://www.instagram.com/schildmair/" target="_blank" rel="noopener noreferrer">
+                    <Instagram size={20} />
+                  </a>
                 </Button>
               </div>
             </div>
