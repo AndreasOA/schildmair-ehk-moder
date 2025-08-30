@@ -584,9 +584,6 @@ function App() {
                 className="h-14 w-auto"
               />
             </div>
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
-              Über Schildmair
-            </h2>
             <p className="text-lg text-muted-foreground mb-6 max-w-3xl mx-auto">
               Als traditioneller Familienbetrieb in Wels stehen wir seit Generationen für Qualität, 
               Fachkompetenz und Verlässlichkeit. Unser Motto "Der Eisenwarenhändler Ihres Vertrauens" 
