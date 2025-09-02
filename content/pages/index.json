@@ -42,7 +42,8 @@
     "servicesSubheading": "Hochwertige Produkte und Services für Privat, Handwerk und Gewerbe",
     "services": [
         {
-            "title": "Test"
+            "title": "Test",
+            "icon": "Car"
         },
         {
             "icon": "Wrench",
