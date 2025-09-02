@@ -1,80 +1,211 @@
 {
-  "type": "Page",
-  "slug": "index",
-  "title": "EHK Sowi - Eisenwaren & Haushaltsbedarf in Wels",
-  "heroTagline": "Seit Generationen Ihr vertrauenswürdiger Partner",
-  "heroHeadline": "EHK Sowi",
-  "heroSubheadline": "Ihr vertrauenswürdiger Fachhandel für Eisenwaren & Haushaltsbedarf in Wels",
-  "heroDescription": "Bei uns finden Sie alles — von Profi-Werkzeugen bis hin zu hochwertigen Küchenhelfern. Traditioneller Familienbetrieb mit modernem Service.",
-  "jobBanner": {
-    "enabled": true,
-    "text": "🚀 Wir suchen Verstärkung! Verkäufer, Servicetechniker & Reinigungskraft gesucht",
-    "ctaLabel": "Jetzt bewerben"
-  },
-  "partnerBrandsHeading": "Unsere Markenpartner",
-  "partnerBrandsSubheading": "Qualität durch bewährte Marken und langjährige Partnerschaften",
-  "partnerBrands": ["Stihl","Feller","FEIN","Metabo","Bosch","KitchenAid","Kränzle","BBQ Kitchen","Kelomat","Makita","Milwaukee","Napoleon","Petromax","Ritzenhoff & Breker","Rottner","RUKO","Schüller","SOLA","Städter","Le Creuset","Tormek","Victorinox","WMF"],
-  "servicesHeading": "Unsere Leistungen",
-  "servicesSubheading": "Hochwertige Produkte und Services für Privat, Handwerk und Gewerbe",
-  "services": [
-    { "icon": "Wrench", "title": "Eisenwaren & Werkzeug", "description": "Zuverlässiger Partner für Werkzeug, kleine Eisenwaren, Baubedarf, Elektrotechnik und Gartengeräte"},
-    { "icon": "Home", "title": "Küchen- & Haushaltsartikel", "description": "Umfangreiches Sortiment von Küchenmaschinen, Elektrokleingeräten, Kochgeschirr und Geschirr"},
-    { "icon": "Scissors", "title": "Rasenmäher-Service", "description": "Professioneller Service und Wartung für Ihre Gartengeräte"},
-    { "icon": "GraduationCap", "title": "Seminare & Kurse", "description": "Grillkurse und weitere praktische Seminare für unsere Kunden"}
-  ],
-  "additionalServices": [
-    {"icon": "Car", "title": "Gratis Parkplatz", "description": "Kostenlose Parkplätze direkt vor dem Geschäft"},
-    {"icon": "ShoppingCart", "title": "Onlineshopping", "description": "Webshop, Industrie- und Gewerbekanal"},
-    {"icon": "GraduationCap", "title": "Events & Seminare", "description": "Grillkurse und weitere Veranstaltungen"}
-  ],
-  "galleryHeading": "Unser Geschäft",
-  "gallerySubheading": "Besuchen Sie uns vor Ort und erleben Sie unser umfangreiches Sortiment",
-  "gallery": [
-    {"imageKey": "frontStore", "title": "Geschäftsfront", "description": "Unsere Geschäftsräume in der Gärtnerstraße"},
-    {"imageKey": "productB1", "title": "Werkzeugabteilung", "description": "Professionelles Werkzeug für jeden Bedarf"},
-    {"imageKey": "productB2", "title": "Haushaltsabteilung", "description": "Hochwertige Küchen- und Haushaltsartikel"},
-    {"imageKey": "productB6", "title": "Rasenmäher & Reparatur-Service", "description": "Professionelle Reparatur und Wartung von Gartengeräten"},
-    {"imageKey": "productB7", "title": "Gläser & Geschirr-Kollektion", "description": "Umfangreiche Auswahl an Gläsern für jeden Anlass"},
-    {"imageKey": "backStore", "title": "Gratis Parkplatz", "description": "Kostenlose Parkplätze direkt vor dem Geschäft"}
-  ],
-  "targetGroupsHeading": "Für wen wir da sind",
-  "targetGroupsSubheading": "Maßgeschneiderte Lösungen für verschiedene Zielgruppen",
-  "targetGroups": [
-    { "icon": "Users", "title": "Privatkunden", "description": "Für alle Haushalts- und Gartenbedürfnisse" },
-    { "icon": "Wrench", "title": "Handwerker", "description": "Professionelles Werkzeug und Materialien" },
-    { "icon": "ShoppingCart", "title": "Industrie & Gewerbe", "description": "Spezielle Kanäle und Großmengen" }
-  ],
-  "aboutIntro": "Als traditioneller Familienbetrieb in Wels stehen wir seit Generationen für Qualität, Fachkompetenz und Verlässlichkeit. Unser Motto \"Der Eisenwarenhändler Ihres Vertrauens\" ist nicht nur ein Versprechen, sondern gelebte Tradition.",
-  "aboutParagraph": "Von hochwertigen Werkzeugen über Haushaltsartikel bis hin zu modernem Onlineshopping - wir verbinden Tradition mit Innovation für optimalen Kundenservice.",
-  "aboutBullets": ["Traditioneller Familienbetrieb","Fachkundige Beratung","Umfassendes Sortiment","Moderner Service"],
-  "promiseTitle": "Unser Versprechen",
-  "promiseQuote": "Der Eisenwarenhändler Ihres Vertrauens",
-  "promiseDescription": "Qualität, Fachkompetenz und Verlässlichkeit in allem was wir tun.",
-  "timelineHeading": "Unsere Geschichte",
-  "timeline": [
-    {"year": "1936", "title": "Gründung", "body": "Gründung durch Herrn Schildmair Franz. Das Unternehmen handelte mit natürlichem Mineralwasser und Jodsalz. Die gewerbliche Eintragung erfolgte am 22.07.1936."},
-    {"year": "1945", "title": "Neustart nach dem Krieg", "body": "Nach der Heimkehr aus dem Krieg wurde die neue Firma Schildmair gegründet, die sich mit dem Verkauf von landwirtschaftlichen Sommer- und Wintergeräten beschäftigte. Entwicklung zum österreichweiten Großhandel."},
-    {"year": "1965", "title": "Erstes Handelsgeschäft", "body": "Gründung des Handelsgeschäftes für Eisenwaren mit Farbenabteilung und Haushaltswaren in der Grieskirchner Straße 3 im Oktober 1965."},
-    {"year": "1971", "title": "Übernahme durch Kurt Schildmair", "body": "Übernahme durch Herrn Schildmair Kurt."},
-    {"year": "1978-1982", "title": "Expansion", "body": "Übernahme der Maxglaner Eisenhandlung in Salzburg (1978), der Firma Schrems in Salzburg (1980) und der Firma Brunbauer in Linz-Urfahr (1982). Übersiedlung zur Grieskirchner Straße 6."},
-    {"year": "1988", "title": "Nächste Generation", "body": "Eintritt von Herrn Schildmair Viktor in das Familienunternehmen."},
-    {"year": "1991-1998", "title": "Modernisierung", "body": "Errichtung der Küchenboutique (1991). Erwerb des ehemaligen Elektrolux-Objektes in der Gärtnerstraße mit 9.000 m² Gesamtfläche (1997) und Umbau auf 1.000m² Verkaufsfläche (1998)."},
-    {"year": "2009-2015", "title": "Service-Erweiterung", "body": "Übernahme der Firma GaMo Kleinmotorgeräte mit Werkstatt (2009). 2015 wurde diese Zweigstelle in die Gärtnerstraße übersiedelt."}
-  ],
-  "contactHeading": "Kontakt & Standort",
-  "contactSubheading": "Besuchen Sie uns in Wels oder kontaktieren Sie uns direkt",
-  "contact": {
-    "address": "Gärtnerstraße 9–11, 4600 Wels, Österreich",
-    "phone": "+43 7242 45129",
-    "fax": "+43 7242 45129-30",
-    "email": "office@schildmair.at",
-    "openingHours": [
-      {"label": "Montag - Freitag", "value": "08:00-12:00 & 14:00-18:00"},
-      {"label": "Samstag", "value": "08:30-12:00"}
-    ]
-  },
-  "footerDescription": "Ihr vertrauenswürdiger Fachhandel für Eisenwaren & Haushaltsbedarf in Wels. Tradition trifft auf moderne Services.",
-  "footerCopyright": "© 2024 Schildmair EHK Sowi. Alle Rechte vorbehalten.",
-  "footerQuickLinksHeading": "Schnellzugriffe",
-  "footerLegalHeading": "Rechtliches"
+    "type": "Page",
+    "slug": "index",
+    "title": "EHK Sowi - Eisenwaren & Haushaltsbedarf in Wels",
+    "heroTagline": "Seit Generationen Ihr vertrauenswürdiger Partner",
+    "heroHeadline": "EHK Sowi",
+    "heroSubheadline": "Ihr vertrauenswürdiger Fachhandel für Eisenwaren & Haushaltsbedarf in Welsssssssssssssssssssssssssssssssssss",
+    "heroDescription": "Bei uns finden Sie alles — von Profi-Werkzeugen bis hin zu hochwertigen Küchenhelfern. Traditioneller Familienbetrieb mit modernem Service.",
+    "jobBanner": {
+        "enabled": true,
+        "text": "🚀 Wir suchen Verstärkung! Verkäufer, Servicetechniker & Reinigungskraft gesucht",
+        "ctaLabel": "Jetzt bewerben"
+    },
+    "partnerBrandsHeading": "Unsere Markenpartner",
+    "partnerBrandsSubheading": "Qualität durch bewährte Marken und langjährige Partnerschaften",
+    "partnerBrands": [
+        "Stihl",
+        "Feller",
+        "FEIN",
+        "Metabo",
+        "Bosch",
+        "KitchenAid",
+        "Kränzle",
+        "BBQ Kitchen",
+        "Kelomat",
+        "Makita",
+        "Milwaukee",
+        "Napoleon",
+        "Petromax",
+        "Ritzenhoff & Breker",
+        "Rottner",
+        "RUKO",
+        "Schüller",
+        "SOLA",
+        "Städter",
+        "Le Creuset",
+        "Tormek",
+        "Victorinox",
+        "WMF"
+    ],
+    "servicesHeading": "Unsere Leistungen",
+    "servicesSubheading": "Hochwertige Produkte und Services für Privat, Handwerk und Gewerbe",
+    "services": [
+        {
+            "icon": "Wrench",
+            "title": "Eisenwaren & Werkzeug",
+            "description": "Zuverlässiger Partner für Werkzeug, kleine Eisenwaren, Baubedarf, Elektrotechnik und Gartengeräte"
+        },
+        {
+            "icon": "Home",
+            "title": "Küchen- & Haushaltsartikel",
+            "description": "Umfangreiches Sortiment von Küchenmaschinen, Elektrokleingeräten, Kochgeschirr und Geschirr"
+        },
+        {
+            "icon": "Scissors",
+            "title": "Rasenmäher-Service",
+            "description": "Professioneller Service und Wartung für Ihre Gartengeräte"
+        },
+        {
+            "icon": "GraduationCap",
+            "title": "Seminare & Kurse",
+            "description": "Grillkurse und weitere praktische Seminare für unsere Kunden"
+        }
+    ],
+    "additionalServices": [
+        {
+            "icon": "Car",
+            "title": "Gratis Parkplatz",
+            "description": "Kostenlose Parkplätze direkt vor dem Geschäft"
+        },
+        {
+            "icon": "ShoppingCart",
+            "title": "Onlineshopping",
+            "description": "Webshop, Industrie- und Gewerbekanal"
+        },
+        {
+            "icon": "GraduationCap",
+            "title": "Events & Seminare",
+            "description": "Grillkurse und weitere Veranstaltungen"
+        }
+    ],
+    "galleryHeading": "Unser Geschäft",
+    "gallerySubheading": "Besuchen Sie uns vor Ort und erleben Sie unser umfangreiches Sortiment",
+    "gallery": [
+        {
+            "imageKey": "frontStore",
+            "title": "Geschäftsfront",
+            "description": "Unsere Geschäftsräume in der Gärtnerstraße"
+        },
+        {
+            "imageKey": "productB1",
+            "title": "Werkzeugabteilung",
+            "description": "Professionelles Werkzeug für jeden Bedarf"
+        },
+        {
+            "imageKey": "productB2",
+            "title": "Haushaltsabteilung",
+            "description": "Hochwertige Küchen- und Haushaltsartikel"
+        },
+        {
+            "imageKey": "productB6",
+            "title": "Rasenmäher & Reparatur-Service",
+            "description": "Professionelle Reparatur und Wartung von Gartengeräten"
+        },
+        {
+            "imageKey": "productB7",
+            "title": "Gläser & Geschirr-Kollektion",
+            "description": "Umfangreiche Auswahl an Gläsern für jeden Anlass"
+        },
+        {
+            "imageKey": "backStore",
+            "title": "Gratis Parkplatz",
+            "description": "Kostenlose Parkplätze direkt vor dem Geschäft"
+        }
+    ],
+    "targetGroupsHeading": "Für wen wir da sind",
+    "targetGroupsSubheading": "Maßgeschneiderte Lösungen für verschiedene Zielgruppen",
+    "targetGroups": [
+        {
+            "icon": "Users",
+            "title": "Privatkunden",
+            "description": "Für alle Haushalts- und Gartenbedürfnisse"
+        },
+        {
+            "icon": "Wrench",
+            "title": "Handwerker",
+            "description": "Professionelles Werkzeug und Materialien"
+        },
+        {
+            "icon": "ShoppingCart",
+            "title": "Industrie & Gewerbe",
+            "description": "Spezielle Kanäle und Großmengen"
+        }
+    ],
+    "aboutIntro": "Als traditioneller Familienbetrieb in Wels stehen wir seit Generationen für Qualität, Fachkompetenz und Verlässlichkeit. Unser Motto \"Der Eisenwarenhändler Ihres Vertrauens\" ist nicht nur ein Versprechen, sondern gelebte Tradition.",
+    "aboutParagraph": "Von hochwertigen Werkzeugen über Haushaltsartikel bis hin zu modernem Onlineshopping - wir verbinden Tradition mit Innovation für optimalen Kundenservice.",
+    "aboutBullets": [
+        "Traditioneller Familienbetrieb",
+        "Fachkundige Beratung",
+        "Umfassendes Sortiment",
+        "Moderner Service"
+    ],
+    "promiseTitle": "Unser Versprechen",
+    "promiseQuote": "Der Eisenwarenhändler Ihres Vertrauens",
+    "promiseDescription": "Qualität, Fachkompetenz und Verlässlichkeit in allem was wir tun.",
+    "timelineHeading": "Unsere Geschichte",
+    "timeline": [
+        {
+            "year": "1936",
+            "title": "Gründung",
+            "body": "Gründung durch Herrn Schildmair Franz. Das Unternehmen handelte mit natürlichem Mineralwasser und Jodsalz. Die gewerbliche Eintragung erfolgte am 22.07.1936."
+        },
+        {
+            "year": "1945",
+            "title": "Neustart nach dem Krieg",
+            "body": "Nach der Heimkehr aus dem Krieg wurde die neue Firma Schildmair gegründet, die sich mit dem Verkauf von landwirtschaftlichen Sommer- und Wintergeräten beschäftigte. Entwicklung zum österreichweiten Großhandel."
+        },
+        {
+            "year": "1965",
+            "title": "Erstes Handelsgeschäft",
+            "body": "Gründung des Handelsgeschäftes für Eisenwaren mit Farbenabteilung und Haushaltswaren in der Grieskirchner Straße 3 im Oktober 1965."
+        },
+        {
+            "year": "1971",
+            "title": "Übernahme durch Kurt Schildmair",
+            "body": "Übernahme durch Herrn Schildmair Kurt."
+        },
+        {
+            "year": "1978-1982",
+            "title": "Expansion",
+            "body": "Übernahme der Maxglaner Eisenhandlung in Salzburg (1978), der Firma Schrems in Salzburg (1980) und der Firma Brunbauer in Linz-Urfahr (1982). Übersiedlung zur Grieskirchner Straße 6."
+        },
+        {
+            "year": "1988",
+            "title": "Nächste Generation",
+            "body": "Eintritt von Herrn Schildmair Viktor in das Familienunternehmen."
+        },
+        {
+            "year": "1991-1998",
+            "title": "Modernisierung",
+            "body": "Errichtung der Küchenboutique (1991). Erwerb des ehemaligen Elektrolux-Objektes in der Gärtnerstraße mit 9.000 m² Gesamtfläche (1997) und Umbau auf 1.000m² Verkaufsfläche (1998)."
+        },
+        {
+            "year": "2009-2015",
+            "title": "Service-Erweiterung",
+            "body": "Übernahme der Firma GaMo Kleinmotorgeräte mit Werkstatt (2009). 2015 wurde diese Zweigstelle in die Gärtnerstraße übersiedelt."
+        }
+    ],
+    "contactHeading": "Kontakt & Standort",
+    "contactSubheading": "Besuchen Sie uns in Wels oder kontaktieren Sie uns direkt",
+    "contact": {
+        "address": "Gärtnerstraße 9–11, 4600 Wels, Österreich",
+        "phone": "+43 7242 45129",
+        "fax": "+43 7242 45129-30",
+        "email": "office@schildmair.at",
+        "openingHours": [
+            {
+                "label": "Montag - Freitag",
+                "value": "08:00-12:00 & 14:00-18:00"
+            },
+            {
+                "label": "Samstag",
+                "value": "08:30-12:00"
+            }
+        ]
+    },
+    "footerDescription": "Ihr vertrauenswürdiger Fachhandel für Eisenwaren & Haushaltsbedarf in Wels. Tradition trifft auf moderne Services.",
+    "footerCopyright": "© 2024 Schildmair EHK Sowi. Alle Rechte vorbehalten.",
+    "footerQuickLinksHeading": "Schnellzugriffe",
+    "footerLegalHeading": "Rechtliches"
 }
