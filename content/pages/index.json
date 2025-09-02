@@ -43,7 +43,7 @@
     "services": [
         {
             "title": "Test",
-            "icon": "Car"
+            "icon": "car"
         },
         {
             "icon": "Wrench",
