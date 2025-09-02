@@ -41,6 +41,7 @@
     "servicesHeading": "Unsere Leistungen",
     "servicesSubheading": "Hochwertige Produkte und Services für Privat, Handwerk und Gewerbe",
     "services": [
+        {},
         {
             "icon": "Wrench",
             "title": "Eisenwaren & Werkzeug",
