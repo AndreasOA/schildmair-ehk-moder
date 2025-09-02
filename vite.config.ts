@@ -19,6 +19,6 @@ export default defineConfig({
   base: "/",
   server: {
     host: true,
-    port: 3999
+    port: 3000
   },
 });
