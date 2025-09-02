@@ -9,86 +9,88 @@ export default defineStackbitConfig({
       contentDirs: ["content"],
       models: [
         {
-          name: "Home",
-            type: "page",
-            urlPath: "/{slug}",
-            filePath: "content/pages/{slug}.json",
-            fields: [
-              { name: "title", type: "string", required: true },
-              { name: "slug", type: "string", required: true },
-              { name: "heroTagline", type: "string" },
-              { name: "heroHeadline", type: "string" },
-              { name: "heroSubheadline", type: "string" },
-              { name: "heroDescription", type: "text" },
-              { name: "partnerBrandsHeading", type: "string" },
-              { name: "partnerBrandsSubheading", type: "string" },
-              { name: "partnerBrands", type: "list", items: { type: "string" } },
-              { name: "servicesHeading", type: "string" },
-              { name: "servicesSubheading", type: "string" },
-              { name: "jobBanner", type: "object", fields: [
-                { name: "enabled", type: "boolean" },
-                { name: "text", type: "string" },
-                { name: "ctaLabel", type: "string" }
-              ]},
-              { name: "services", type: "list", items: { type: "object", fields: [
-                { name: "icon", type: "string" },
-                { name: "title", type: "string" },
-                { name: "description", type: "text" }
-              ]}},
-              { name: "additionalServices", type: "list", items: { type: "object", fields: [
-                { name: "icon", type: "string" },
-                { name: "title", type: "string" },
-                { name: "description", type: "string" }
-              ]}},
-              { name: "galleryHeading", type: "string" },
-              { name: "gallerySubheading", type: "string" },
-              { name: "gallery", type: "list", items: { type: "object", fields: [
-                { name: "imageKey", type: "string" },
-                { name: "title", type: "string" },
-                { name: "description", type: "string" }
-              ]}},
-              { name: "targetGroupsHeading", type: "string" },
-              { name: "targetGroupsSubheading", type: "string" },
-              { name: "targetGroups", type: "list", items: { type: "object", fields: [
-                { name: "icon", type: "string" },
-                { name: "title", type: "string" },
-                { name: "description", type: "string" }
-              ]}},
-              { name: "aboutIntro", type: "text" },
-              { name: "aboutParagraph", type: "text" },
-              { name: "aboutBullets", type: "list", items: { type: "string" } },
-              { name: "promiseTitle", type: "string" },
-              { name: "promiseQuote", type: "string" },
-              { name: "promiseDescription", type: "string" },
-              { name: "timelineHeading", type: "string" },
-              { name: "timeline", type: "list", items: { type: "object", fields: [
-                { name: "year", type: "string" },
-                { name: "title", type: "string" },
-                { name: "body", type: "text" }
-              ]}},
-              { name: "contactHeading", type: "string" },
-              { name: "contactSubheading", type: "string" },
-              { name: "contact", type: "object", fields: [
-                { name: "address", type: "string" },
-                { name: "phone", type: "string" },
-                { name: "fax", type: "string" },
-                { name: "email", type: "string" },
-                { name: "openingHours", type: "list", items: { type: "object", fields: [
-                  { name: "label", type: "string" },
-                  { name: "value", type: "string" }
-                ]}}
-              ]},
-              { name: "footerDescription", type: "text" },
-              { name: "footerCopyright", type: "string" },
-              { name: "footerQuickLinksHeading", type: "string" },
-              { name: "footerLegalHeading", type: "string" }
-            ]
-        },
-        {
-          name: "Offizielles",
+          name: "Page",
           type: "page",
           urlPath: "/{slug}",
           filePath: "content/pages/{slug}.json",
+          match: "**/index.json",
+          fields: [
+            { name: "title", type: "string", required: true },
+            { name: "slug", type: "string", required: true },
+            { name: "heroTagline", type: "string" },
+            { name: "heroHeadline", type: "string" },
+            { name: "heroSubheadline", type: "string" },
+            { name: "heroDescription", type: "text" },
+            { name: "partnerBrandsHeading", type: "string" },
+            { name: "partnerBrandsSubheading", type: "string" },
+            { name: "partnerBrands", type: "list", items: { type: "string" } },
+            { name: "servicesHeading", type: "string" },
+            { name: "servicesSubheading", type: "string" },
+            { name: "jobBanner", type: "object", fields: [
+              { name: "enabled", type: "boolean" },
+              { name: "text", type: "string" },
+              { name: "ctaLabel", type: "string" }
+            ]},
+            { name: "services", type: "list", items: { type: "object", fields: [
+              { name: "icon", type: "string" },
+              { name: "title", type: "string" },
+              { name: "description", type: "text" }
+            ]}},
+            { name: "additionalServices", type: "list", items: { type: "object", fields: [
+              { name: "icon", type: "string" },
+              { name: "title", type: "string" },
+              { name: "description", type: "string" }
+            ]}},
+            { name: "galleryHeading", type: "string" },
+            { name: "gallerySubheading", type: "string" },
+            { name: "gallery", type: "list", items: { type: "object", fields: [
+              { name: "imageKey", type: "string" },
+              { name: "title", type: "string" },
+              { name: "description", type: "string" }
+            ]}},
+            { name: "targetGroupsHeading", type: "string" },
+            { name: "targetGroupsSubheading", type: "string" },
+            { name: "targetGroups", type: "list", items: { type: "object", fields: [
+              { name: "icon", type: "string" },
+              { name: "title", type: "string" },
+              { name: "description", type: "string" }
+            ]}},
+            { name: "aboutIntro", type: "text" },
+            { name: "aboutParagraph", type: "text" },
+            { name: "aboutBullets", type: "list", items: { type: "string" } },
+            { name: "promiseTitle", type: "string" },
+            { name: "promiseQuote", type: "string" },
+            { name: "promiseDescription", type: "string" },
+            { name: "timelineHeading", type: "string" },
+            { name: "timeline", type: "list", items: { type: "object", fields: [
+              { name: "year", type: "string" },
+              { name: "title", type: "string" },
+              { name: "body", type: "text" }
+            ]}},
+            { name: "contactHeading", type: "string" },
+            { name: "contactSubheading", type: "string" },
+            { name: "contact", type: "object", fields: [
+              { name: "address", type: "string" },
+              { name: "phone", type: "string" },
+              { name: "fax", type: "string" },
+              { name: "email", type: "string" },
+              { name: "openingHours", type: "list", items: { type: "object", fields: [
+                { name: "label", type: "string" },
+                { name: "value", type: "string" }
+              ]}}
+            ]},
+            { name: "footerDescription", type: "text" },
+            { name: "footerCopyright", type: "string" },
+            { name: "footerQuickLinksHeading", type: "string" },
+            { name: "footerLegalHeading", type: "string" }
+          ]
+        },
+        {
+          name: "LegalPage",
+          type: "page",
+          urlPath: "/{slug}",
+          filePath: "content/pages/{slug}.json",
+          match: ["**/datenschutz.json", "**/impressum.json"],
           fields: [
             { name: "title", type: "string", required: true },
             { name: "slug", type: "string", required: true },
@@ -120,10 +122,11 @@ export default defineStackbitConfig({
           ]
         },
         {
-          name: "Karriere",
+          name: "CareerPage",
           type: "page",
           urlPath: "/{slug}",
           filePath: "content/pages/{slug}.json",
+          match: "**/karriere.json",
           fields: [
             { name: "title", type: "string", required: true },
             { name: "slug", type: "string", required: true },
@@ -149,28 +152,5 @@ export default defineStackbitConfig({
         publicPath: "/assets"
       }
     })
-  ],
-  // Map 'index' slug to '/' so Visual Editor iframe shows real home URL
-  siteMap: ({ documents, models }) => {
-    const pageModels = models.filter(m => m.type === 'page').map(m => m.name);
-    return documents
-      .filter((d: any) => pageModels.includes(d.modelName))
-      .map((d: any) => {
-        // Try multiple locations to obtain slug depending on internal shape
-        const fileMatch = d.filePath ? d.filePath.match(/content[\\/]+pages[\\/]+(.+)\.json$/) : null;
-        const inferredSlug = fileMatch ? fileMatch[1] : undefined;
-        const slug = d.data?.slug || d.fields?.slug?.value || d.slug || inferredSlug;
-        if (!slug) return null;
-        const urlPath = slug === 'index' ? '/' : `/${slug}`;
-        // stableId recommended so entries persist; use file path or document id
-        const stableId = d.id || d.filePath || urlPath;
-        return {
-          stableId,
-          urlPath,
-          document: d,
-          isHomePage: slug === 'index'
-        } as any;
-      })
-      .filter(Boolean);
-  }
+  ]
 });
