@@ -19,6 +19,7 @@ export default defineConfig({
   base: "/",
   server: {
     host: true,
-    port: 3000
+    port: 3000,
+    allowedHosts: ['devserver-preview--incandescent-tarsier-994a21.netlify.app']
   },
 });
