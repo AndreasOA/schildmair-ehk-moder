@@ -9,7 +9,7 @@ export default defineStackbitConfig({
       contentDirs: ["content"],
       models: [
         {
-          name: "Page",
+          name: "Home",
             type: "page",
             urlPath: "/{slug}",
             filePath: "content/pages/{slug}.json",
@@ -85,7 +85,7 @@ export default defineStackbitConfig({
             ]
         },
         {
-          name: "LegalPage",
+          name: "Offizielles",
           type: "page",
           urlPath: "/{slug}",
           filePath: "content/pages/{slug}.json",
@@ -120,7 +120,7 @@ export default defineStackbitConfig({
           ]
         },
         {
-          name: "CareerPage",
+          name: "Karriere",
           type: "page",
           urlPath: "/{slug}",
           filePath: "content/pages/{slug}.json",
@@ -149,5 +149,22 @@ export default defineStackbitConfig({
         publicPath: "/assets"
       }
     })
-  ]
+  ],
+  // Map 'index' slug to '/' so Visual Editor iframe shows real home URL
+  siteMap: ({ documents, models }) => {
+    const pageModels = models.filter(m => m.type === 'page').map(m => m.name);
+    return documents
+      .filter((d: any) => pageModels.includes(d.modelName))
+      .map((d: any) => {
+        const slug = d.fields?.slug?.value || d.slug || d.data?.slug;
+        if (!slug) return null;
+        const urlPath = slug === 'index' ? '/' : `/${slug}`;
+        return {
+          urlPath,
+            document: d,
+            isHomePage: slug === 'index'
+        } as any; // cast to satisfy TS without importing SiteMapEntry type details
+      })
+      .filter(Boolean);
+  }
 });

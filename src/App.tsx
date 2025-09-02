@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { getHome } from '@/lib/content'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -72,10 +72,31 @@ function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [currentPage, setCurrentPage] = useState<'home' | 'karriere' | 'datenschutz' | 'impressum'>('home')
 
+  // Derive page from pathname so Visual Editor iframe URL loads correct view
+  useEffect(() => {
+    const applyPath = () => {
+      const raw = window.location.pathname.replace(/\/+$/, '').replace(/^\//, '')
+      const page = (raw === '' || raw === 'index') ? 'home' : raw
+      if (page === 'karriere' || page === 'datenschutz' || page === 'impressum' || page === 'home') {
+        setCurrentPage(page)
+      } else {
+        // fallback unknown -> home
+        setCurrentPage('home')
+      }
+    }
+    applyPath()
+    window.addEventListener('popstate', applyPath)
+    return () => window.removeEventListener('popstate', applyPath)
+  }, [])
+
   // Handle page navigation
   const handlePageChange = (page: 'home' | 'karriere' | 'datenschutz' | 'impressum') => {
+    const path = page === 'home' ? '/' : `/${page}`
+    if (window.location.pathname !== path) {
+      window.history.pushState({}, '', path)
+    }
     setCurrentPage(page)
-    setMobileMenuOpen(false) // Close mobile menu when navigating
+    setMobileMenuOpen(false)
   }
 
   // Render the appropriate page
