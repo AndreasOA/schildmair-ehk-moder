@@ -156,14 +156,20 @@ export default defineStackbitConfig({
     return documents
       .filter((d: any) => pageModels.includes(d.modelName))
       .map((d: any) => {
-        const slug = d.fields?.slug?.value || d.slug || d.data?.slug;
+        // Try multiple locations to obtain slug depending on internal shape
+        const fileMatch = d.filePath ? d.filePath.match(/content[\\/]+pages[\\/]+(.+)\.json$/) : null;
+        const inferredSlug = fileMatch ? fileMatch[1] : undefined;
+        const slug = d.data?.slug || d.fields?.slug?.value || d.slug || inferredSlug;
         if (!slug) return null;
         const urlPath = slug === 'index' ? '/' : `/${slug}`;
+        // stableId recommended so entries persist; use file path or document id
+        const stableId = d.id || d.filePath || urlPath;
         return {
+          stableId,
           urlPath,
-            document: d,
-            isHomePage: slug === 'index'
-        } as any; // cast to satisfy TS without importing SiteMapEntry type details
+          document: d,
+          isHomePage: slug === 'index'
+        } as any;
       })
       .filter(Boolean);
   }

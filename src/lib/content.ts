@@ -1,5 +1,5 @@
 // Simple content loading helpers. In a real setup you might add caching or dynamic fetch.
-import home from '../../content/pages/home.json';
+import home from '../../content/pages/index.json';
 import impressum from '../../content/pages/impressum.json';
 import datenschutz from '../../content/pages/datenschutz.json';
 import karriere from '../../content/pages/karriere.json';
