@@ -1,0 +1,14 @@
+{
+  "type": "CareerPage",
+  "slug": "karriere",
+  "title": "Karriere bei Schildmair",
+  "intro": "Werden Sie Teil unseres Familienunternehmens",
+  "offerings": ["unbefristetes Arbeitsverhältnis", "sicherer Arbeitsplatz", "selbständiges Arbeiten", "familienfreundliche Arbeitszeiten", "hochwertige Produkte"],
+  "positions": [
+    {"title": "Servicetechniker für Gartengeräte", "employment": "Vollzeit oder Teilzeit"},
+    {"title": "Verkäufer(in) für Küchen und Haushaltwaren", "employment": "Teilzeit oder Vollzeit"},
+    {"title": "Reinigungskraft", "employment": "Teilzeit oder Vollzeit"}
+  ],
+  "contactPerson": {"name": "Viktor Schildmair", "email": "office@schildmair.at", "phone": "+43 7242 45129"},
+  "closingNote": "Ihr Schildmair TEAM freut sich darauf, Sie kennenzulernen!"
+}

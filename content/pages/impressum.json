@@ -1,0 +1,13 @@
+{
+  "type": "LegalPage",
+  "slug": "impressum",
+  "title": "Impressum",
+  "intro": "Rechtliche Informationen zu unserem Unternehmen",
+  "companyName": "EHK-SOWI Eisenwaren- Haus- u. Küchengeräte Großhandels GmbH",
+  "addressLines": ["Gärtnerstraße 9", "A-4600 Wels"],
+  "contacts": {"phone": "0043/7242/45129", "fax": "0043/7242/45129-19", "email": "office@schildmair.at"},
+  "registry": {"firmenbuchnummer": "FN 103173 a", "uid": "ATU25187703", "era": "51734", "ara": "20649", "eori": "ATEOS1000101484"},
+  "disclaimer": {"contentLiability": "Alle Informationen werden sorgfältig recherchiert...", "linksLiability": "Bei externen Links übernehmen wir keine Verantwortung..."},
+  "copyright": "Alle Texte, Adressen, Bilder und Grafiken unterliegen dem Urheberrecht...",
+  "legalBasis": "Impressum nach § 5 ECG (E-Commerce-Gesetz)"
+}
