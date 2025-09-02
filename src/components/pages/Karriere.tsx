@@ -4,14 +4,16 @@ import { Badge } from '@/components/ui/badge'
 import { Separator } from '@/components/ui/separator'
 import { ArrowLeft, Mail, Phone } from 'lucide-react'
 import schildmairLogo from '@/assets/images/logo.png'
+import { getKarriere } from '@/lib/content'
 
 interface KarriereProps {
   onBack: () => void
 }
 
 function Karriere({ onBack }: KarriereProps) {
+  const data = getKarriere()
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background" data-sb-object-id={`content/pages/${data.slug}.json`}>
       {/* Header */}
       <header className="sticky top-0 z-50 bg-background/95 backdrop-blur border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -26,7 +28,7 @@ function Karriere({ onBack }: KarriereProps) {
                 className="h-10 w-auto"
               />
             </div>
-            <Badge variant="secondary">Karriere</Badge>
+            <Badge variant="secondary" data-sb-field-path="title">{data.title}</Badge>
           </div>
         </div>
       </header>
@@ -36,49 +38,31 @@ function Karriere({ onBack }: KarriereProps) {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-              Karriere bei Schildmair
+              <span data-sb-field-path="title">{data.title}</span>
             </h1>
             <p className="text-lg text-muted-foreground">
-              Werden Sie Teil unseres Familienunternehmens
+              <span data-sb-field-path="intro">{data.intro}</span>
             </p>
           </div>
 
           <Card className="p-8">
             <CardHeader>
-              <CardTitle><h3 className="text-xl font-semibold">Arbeiten bei Schildmair</h3></CardTitle>
+              <CardTitle><h3 className="text-xl font-semibold" data-sb-field-path="title">{data.title}</h3></CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
               <div>
-                <p className="text-muted-foreground mb-6">
-                  Für unser Geschäft in Wels suchen wir Verkäufer, Servicetechniker für Gartengeräte und eine Reinigungskraft.
-                </p>
-                <p className="text-muted-foreground mb-6">
-                  Wenn Sie Spaß an der Arbeit haben sind Sie bei uns genau richtig.
-                </p>
+                <p className="text-muted-foreground mb-6">Für unser Geschäft in Wels suchen wir <strong data-sb-field-path="positions">{data.positions.map(p => p.title).join(', ')}</strong>.</p>
+                <p className="text-muted-foreground mb-6">Wenn Sie Spaß an der Arbeit haben sind Sie bei uns genau richtig.</p>
                 
                 <div className="bg-primary/10 rounded-lg p-6 mb-6">
                   <h4 className="font-semibold mb-4">Wir bieten:</h4>
-                  <ul className="space-y-2 text-muted-foreground">
-                    <li className="flex items-center">
-                      <span className="w-2 h-2 bg-primary rounded-full mr-3"></span>
-                      unbefristetes Arbeitsverhältnis
-                    </li>
-                    <li className="flex items-center">
-                      <span className="w-2 h-2 bg-primary rounded-full mr-3"></span>
-                      sicherer Arbeitsplatz
-                    </li>
-                    <li className="flex items-center">
-                      <span className="w-2 h-2 bg-primary rounded-full mr-3"></span>
-                      selbständiges Arbeiten
-                    </li>
-                    <li className="flex items-center">
-                      <span className="w-2 h-2 bg-primary rounded-full mr-3"></span>
-                      familienfreundliche Arbeitszeiten
-                    </li>
-                    <li className="flex items-center">
-                      <span className="w-2 h-2 bg-primary rounded-full mr-3"></span>
-                      hochwertige Produkte
-                    </li>
+                  <ul className="space-y-2 text-muted-foreground" data-sb-field-path="offerings">
+                    {data.offerings?.map((o,i) => (
+                      <li key={i} className="flex items-center" data-sb-field-path={`.${i}`}>
+                        <span className="w-2 h-2 bg-primary rounded-full mr-3"></span>
+                        {o}
+                      </li>
+                    ))}
                   </ul>
                 </div>
                 
@@ -94,27 +78,15 @@ function Karriere({ onBack }: KarriereProps) {
 
               <div>
                 <h3 className="text-xl font-semibold mb-4">Stellenausschreibungen</h3>
-                <div className="space-y-4">
-                  <Card className="border border-border">
-                    <CardContent className="p-4">
-                      <h4 className="font-semibold mb-2">🛠️ Servicetechniker für Gartengeräte</h4>
-                      <p className="text-sm text-muted-foreground">Vollzeit oder Teilzeit</p>
-                    </CardContent>
-                  </Card>
-                  
-                  <Card className="border border-border">
-                    <CardContent className="p-4">
-                      <h4 className="font-semibold mb-2">🏪 Verkäufer(in) für Küchen und Haushaltwaren</h4>
-                      <p className="text-sm text-muted-foreground">Teilzeit oder Vollzeit</p>
-                    </CardContent>
-                  </Card>
-                  
-                  <Card className="border border-border">
-                    <CardContent className="p-4">
-                      <h4 className="font-semibold mb-2">🧹 Reinigungskraft</h4>
-                      <p className="text-sm text-muted-foreground">Teilzeit oder Vollzeit</p>
-                    </CardContent>
-                  </Card>
+                <div className="space-y-4" data-sb-field-path="positions">
+                  {data.positions?.map((p,i) => (
+                    <Card className="border border-border" key={i} data-sb-field-path={`.${i}`}>
+                      <CardContent className="p-4">
+                        <h4 className="font-semibold mb-2" data-sb-field-path="title">{p.title}</h4>
+                        <p className="text-sm text-muted-foreground" data-sb-field-path="employment">{p.employment}</p>
+                      </CardContent>
+                    </Card>
+                  ))}
                 </div>
               </div>
 
@@ -125,8 +97,8 @@ function Karriere({ onBack }: KarriereProps) {
                 <p className="text-muted-foreground mb-4">
                   Wir freuen uns auf Ihre Bewerbung.
                 </p>
-                <p className="text-muted-foreground mb-6">
-                  <strong>Viktor Schildmair</strong> - Ihr Ansprechpartner für Bewerbungen
+                <p className="text-muted-foreground mb-6" data-sb-field-path="contactPerson.name">
+                  <strong>{data.contactPerson?.name}</strong> - Ihr Ansprechpartner für Bewerbungen
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4 mt-6">
@@ -149,19 +121,17 @@ function Karriere({ onBack }: KarriereProps) {
                   <div className="space-y-2 text-sm text-muted-foreground">
                     <div className="flex items-center">
                       <Mail className="mr-2" size={16} />
-                      <span>office@schildmair.at</span>
+                      <span data-sb-field-path="contactPerson.email">{data.contactPerson?.email}</span>
                     </div>
                     <div className="flex items-center">
                       <Phone className="mr-2" size={16} />
-                      <span>+43 7242 45129</span>
+                      <span data-sb-field-path="contactPerson.phone">{data.contactPerson?.phone}</span>
                     </div>
                   </div>
                 </div>
                 
                 <div className="mt-6 p-4 bg-muted/30 rounded-lg">
-                  <p className="text-sm text-muted-foreground text-center">
-                    <strong>Ihr Schildmair TEAM</strong> freut sich darauf, Sie kennenzulernen!
-                  </p>
+                  <p className="text-sm text-muted-foreground text-center" data-sb-field-path="closingNote">{data.closingNote}</p>
                 </div>
               </div>
             </CardContent>

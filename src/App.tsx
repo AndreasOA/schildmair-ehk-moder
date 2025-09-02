@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { getHome } from '@/lib/content'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -67,6 +68,7 @@ import victorinoxLogo from '@/assets/companies/victorinox.png'
 import wmfLogo from '@/assets/companies/WMF-Logo.svg.png'
 
 function App() {
+  const home = getHome()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [currentPage, setCurrentPage] = useState<'home' | 'karriere' | 'datenschutz' | 'impressum'>('home')
 
@@ -87,34 +89,9 @@ function App() {
     return <Impressum onBack={() => handlePageChange('home')} />
   }
 
-  const services = [
-    {
-      icon: Wrench,
-      title: 'Eisenwaren & Werkzeug',
-      description: 'Zuverlässiger Partner für Werkzeug, kleine Eisenwaren, Baubedarf, Elektrotechnik und Gartengeräte'
-    },
-    {
-      icon: Home,
-      title: 'Küchen- & Haushaltsartikel',
-      description: 'Umfangreiches Sortiment von Küchenmaschinen, Elektrokleingeräten, Kochgeschirr und Geschirr'
-    },
-    {
-      icon: Scissors,
-      title: 'Rasenmäher-Service',
-      description: 'Professioneller Service und Wartung für Ihre Gartengeräte'
-    },
-    {
-      icon: GraduationCap,
-      title: 'Seminare & Kurse',
-      description: 'Grillkurse und weitere praktische Seminare für unsere Kunden'
-    }
-  ]
-
-  const targetGroups = [
-  { icon: Users, title: 'Privatkunden', description: 'Für alle Haushalts- und Gartenbedürfnisse' },
-  { icon: Wrench, title: 'Handwerker', description: 'Professionelles Werkzeug und Materialien' },
-  { icon: ShoppingCart, title: 'Industrie & Gewerbe', description: 'Spezielle Kanäle und Großmengen' }
-  ]
+  const iconMap: Record<string, any> = { Wrench, Home, Scissors, GraduationCap, Users, ShoppingCart }
+  const services = home.services?.map(s => ({ ...s, icon: iconMap[s.icon] || Wrench })) || []
+  const targetGroups = home.targetGroups?.map(g => ({ ...g, icon: iconMap[g.icon] || Users })) || []
 
   const partnerBrands = [
     { name: 'Stihl', logo: stihlLogo },
@@ -143,7 +120,7 @@ function App() {
   ]
 
   return (
-    <div className="min-h-screen bg-background">
+  <div className="min-h-screen bg-background" data-sb-object-id={`content/pages/${home.slug}.json`}>
       {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -262,16 +239,15 @@ function App() {
       </nav>
 
       {/* Job Opening Banner */}
-      <div className="bg-gradient-to-r from-secondary to-secondary/80 text-secondary-foreground py-3">
+      <div className="bg-gradient-to-r from-secondary to-secondary/80 text-secondary-foreground py-3" data-sb-field-path="jobBanner">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-center text-center">
             <div className="flex items-center space-x-3">
               <div className="flex items-center space-x-2">
                 <Users size={20} className="hidden sm:block" />
-                <span className="text-sm font-medium">
-                  🚀 Wir suchen Verstärkung! 
-                  <span className="hidden sm:inline"> Verkäufer, Servicetechniker & Reinigungskraft gesucht</span>
-                </span>
+                {home.jobBanner?.enabled && (
+                  <span className="text-sm font-medium" data-sb-field-path="text">{home.jobBanner?.text}</span>
+                )}
               </div>
               <Button 
                 variant="ghost" 
@@ -279,7 +255,7 @@ function App() {
                 className="text-secondary-foreground hover:bg-primary hover:text-primary-foreground border border-secondary-foreground/20 hover:border-primary transition-all text-xs px-4 py-1.5 font-medium"
                 onClick={() => handlePageChange('karriere')}
               >
-                Jetzt bewerben
+                <span data-sb-field-path="ctaLabel">{home.jobBanner?.ctaLabel}</span>
               </Button>
             </div>
           </div>
@@ -290,9 +266,7 @@ function App() {
       <section className="bg-gradient-to-r from-primary/5 to-secondary/5 py-20 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <Badge variant="secondary" className="mb-6">
-              Seit Generationen Ihr vertrauenswürdiger Partner
-            </Badge>
+            <Badge variant="secondary" className="mb-6" data-sb-field-path="heroTagline">{home.heroTagline}</Badge>
             <div className="flex justify-center mb-6">
               <img 
                 src={schildmairLogo} 
@@ -300,15 +274,12 @@ function App() {
                 className="sm:h-28 w-auto h-auto"
               />
             </div>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              EHK Sowi
-            </h1>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6" data-sb-field-path="heroHeadline">{home.heroHeadline}</h1>
             <p className="text-xl sm:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Ihr vertrauenswürdiger Fachhandel für Eisenwaren & Haushaltsbedarf in Wels
+              <span data-sb-field-path="heroSubheadline">{home.heroSubheadline}</span>
             </p>
             <p className="text-lg text-foreground mb-10 max-w-2xl mx-auto">
-              Bei uns finden Sie alles — von Profi-Werkzeugen bis hin zu hochwertigen Küchenhelfern. 
-              Traditioneller Familienbetrieb mit modernem Service.
+              <span data-sb-field-path="heroDescription">{home.heroDescription}</span>
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <DropdownMenu>
@@ -417,16 +388,15 @@ function App() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            <div data-sb-field-path="services" className="contents" />
             {services.map((service, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
+              <Card key={index} className="hover:shadow-lg transition-shadow" data-sb-field-path={`services.${index}`}>
                 <CardHeader className="text-center">
                   <service.icon size={48} className="text-primary mx-auto mb-4" />
-                  <CardTitle className="text-lg">{service.title}</CardTitle>
+                  <CardTitle className="text-lg" data-sb-field-path="title">{service.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-center">
-                    {service.description}
-                  </CardDescription>
+                  <CardDescription className="text-center" data-sb-field-path="description">{service.description}</CardDescription>
                 </CardContent>
               </Card>
             ))}
@@ -558,14 +528,15 @@ function App() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div data-sb-field-path="targetGroups" className="contents" />
             {targetGroups.map((group, index) => (
-              <Card key={index} className="text-center hover:shadow-lg transition-shadow">
+              <Card key={index} className="text-center hover:shadow-lg transition-shadow" data-sb-field-path={`targetGroups.${index}`}>
                 <CardHeader>
                   <group.icon size={56} className="text-secondary mx-auto mb-4" />
-                  <CardTitle>{group.title}</CardTitle>
+                  <CardTitle data-sb-field-path="title">{group.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription>{group.description}</CardDescription>
+                  <CardDescription data-sb-field-path="description">{group.description}</CardDescription>
                 </CardContent>
               </Card>
             ))}
@@ -591,47 +562,28 @@ function App() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-16" data-sb-field-path="aboutParagraph aboutBullets promiseTitle promiseQuote promiseDescription">
             <div>
-              <p className="text-lg text-muted-foreground mb-8">
-                Von hochwertigen Werkzeugen über Haushaltsartikel bis hin zu modernem Onlineshopping 
-                - wir verbinden Tradition mit Innovation für optimalen Kundenservice.
-              </p>
-              <div className="space-y-4">
-                <div className="flex items-center">
-                  <Badge variant="outline" className="mr-3">✓</Badge>
-                  <span>Traditioneller Familienbetrieb</span>
-                </div>
-                <div className="flex items-center">
-                  <Badge variant="outline" className="mr-3">✓</Badge>
-                  <span>Fachkundige Beratung</span>
-                </div>
-                <div className="flex items-center">
-                  <Badge variant="outline" className="mr-3">✓</Badge>
-                  <span>Umfassendes Sortiment</span>
-                </div>
-                <div className="flex items-center">
-                  <Badge variant="outline" className="mr-3">✓</Badge>
-                  <span>Moderner Service</span>
-                </div>
+              <p className="text-lg text-muted-foreground mb-8" data-sb-field-path="aboutParagraph">{home.aboutParagraph}</p>
+              <div className="space-y-4" data-sb-field-path="aboutBullets">
+                {home.aboutBullets?.map((b,i) => (
+                  <div className="flex items-center" key={i} data-sb-field-path={`.${i}`}>
+                    <Badge variant="outline" className="mr-3">✓</Badge>
+                    <span>{b}</span>
+                  </div>
+                ))}
               </div>
             </div>
             <div className="bg-primary/10 rounded-lg p-8">
-              <h3 className="text-2xl font-semibold mb-6 text-center">Unser Versprechen</h3>
-              <blockquote className="text-xl italic text-center text-primary font-medium">
-                "Der Eisenwarenhändler Ihres Vertrauens"
-              </blockquote>
-              <p className="text-center text-muted-foreground mt-4">
-                Qualität, Fachkompetenz und Verlässlichkeit in allem was wir tun.
-              </p>
+              <h3 className="text-2xl font-semibold mb-6 text-center" data-sb-field-path="promiseTitle">{home.promiseTitle}</h3>
+              <blockquote className="text-xl italic text-center text-primary font-medium" data-sb-field-path="promiseQuote">"{home.promiseQuote}"</blockquote>
+              <p className="text-center text-muted-foreground mt-4" data-sb-field-path="promiseDescription">{home.promiseDescription}</p>
             </div>
           </div>
 
           {/* Timeline Section */}
           <div className="mt-20">
-            <h3 className="text-2xl sm:text-3xl font-bold text-center text-foreground mb-12">
-              Unsere Geschichte
-            </h3>
+            <h3 className="text-2xl sm:text-3xl font-bold text-center text-foreground mb-12" data-sb-field-path="timelineHeading">{home.timelineHeading}</h3>
             
             <div className="relative">
               {/* Timeline line - hidden on mobile, shown on lg+ */}
@@ -639,94 +591,64 @@ function App() {
               {/* Mobile timeline line - shown on mobile only */}
               <div className="lg:hidden absolute left-6 w-0.5 bg-primary h-full"></div>
               
-              <div className="space-y-8 lg:space-y-12">
-                {/* 1936 */}
-                <div className="relative lg:flex lg:items-center">
-                  {/* Mobile layout */}
-                  <div className="lg:hidden">
-                    <div className="flex items-start">
-                      <div className="absolute left-6 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background mt-2"></div>
-                      <div className="ml-12">
-                        <Card>
-                          <CardHeader>
-                            <Badge variant="secondary" className="w-fit mb-2">1936</Badge>
-                            <CardTitle className="text-lg">Gründung</CardTitle>
-                          </CardHeader>
-                          <CardContent>
-                            <p className="text-sm text-muted-foreground">
-                              Gründung durch Herrn Schildmair Franz. Das Unternehmen handelte mit natürlichem Mineralwasser und Jodsalz. 
-                              Die gewerbliche Eintragung erfolgte am 22.07.1936.
-                            </p>
-                          </CardContent>
-                        </Card>
+              <div className="space-y-8 lg:space-y-12" data-sb-field-path="timeline">
+                {home.timeline?.map((item,i) => (
+                  <div className="relative lg:flex lg:items-center" key={i} data-sb-field-path={`.${i}`}>
+                    {/* Mobile layout */}
+                    <div className="lg:hidden">
+                      <div className="flex items-start">
+                        <div className="absolute left-6 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background mt-2"></div>
+                        <div className="ml-12">
+                          <Card>
+                            <CardHeader>
+                              <Badge variant="secondary" className="w-fit mb-2" data-sb-field-path="year">{item.year}</Badge>
+                              <CardTitle className="text-lg" data-sb-field-path="title">{item.title}</CardTitle>
+                            </CardHeader>
+                            <CardContent>
+                              <p className="text-sm text-muted-foreground" data-sb-field-path="body">{item.body}</p>
+                            </CardContent>
+                          </Card>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  
-                  {/* Desktop layout */}
-                  <div className="hidden lg:flex lg:items-center lg:w-full">
-                    <div className="flex-1 pr-8 text-right">
-                      <Card className="ml-auto max-w-md">
-                        <CardHeader>
-                          <Badge variant="secondary" className="w-fit ml-auto">1936</Badge>
-                          <CardTitle className="text-lg">Gründung</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                          <p className="text-sm text-muted-foreground">
-                            Gründung durch Herrn Schildmair Franz. Das Unternehmen handelte mit natürlichem Mineralwasser und Jodsalz. 
-                            Die gewerbliche Eintragung erfolgte am 22.07.1936.
-                          </p>
-                        </CardContent>
-                      </Card>
-                    </div>
-                    <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background"></div>
-                    <div className="flex-1 pl-8"></div>
-                  </div>
-                </div>
-
-                {/* 1945 */}
-                <div className="relative lg:flex lg:items-center">
-                  {/* Mobile layout */}
-                  <div className="lg:hidden">
-                    <div className="flex items-start">
-                      <div className="absolute left-6 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background mt-2"></div>
-                      <div className="ml-12">
-                        <Card>
-                          <CardHeader>
-                            <Badge variant="secondary" className="w-fit mb-2">1945</Badge>
-                            <CardTitle className="text-lg">Neustart nach dem Krieg</CardTitle>
-                          </CardHeader>
-                          <CardContent>
-                            <p className="text-sm text-muted-foreground">
-                              Nach der Heimkehr aus dem Krieg wurde die neue Firma Schildmair gegründet, die sich mit dem Verkauf von 
-                              landwirtschaftlichen Sommer- und Wintergeräten beschäftigte. Entwicklung zum österreichweiten Großhandel.
-                            </p>
-                          </CardContent>
-                        </Card>
-                      </div>
+                    {/* Desktop layout */}
+                    <div className="hidden lg:flex lg:items-center lg:w-full">
+                      {i % 2 === 0 ? (
+                        <>
+                          <div className="flex-1 pr-8 text-right">
+                            <Card className="ml-auto max-w-md">
+                              <CardHeader>
+                                <Badge variant="secondary" className="w-fit ml-auto" data-sb-field-path="year">{item.year}</Badge>
+                                <CardTitle className="text-lg" data-sb-field-path="title">{item.title}</CardTitle>
+                              </CardHeader>
+                              <CardContent>
+                                <p className="text-sm text-muted-foreground" data-sb-field-path="body">{item.body}</p>
+                              </CardContent>
+                            </Card>
+                          </div>
+                          <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background"></div>
+                          <div className="flex-1 pl-8"></div>
+                        </>
+                      ) : (
+                        <>
+                          <div className="flex-1 pr-8"></div>
+                          <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background"></div>
+                          <div className="flex-1 pl-8">
+                            <Card className="max-w-md">
+                              <CardHeader>
+                                <Badge variant="secondary" className="w-fit" data-sb-field-path="year">{item.year}</Badge>
+                                <CardTitle className="text-lg" data-sb-field-path="title">{item.title}</CardTitle>
+                              </CardHeader>
+                              <CardContent>
+                                <p className="text-sm text-muted-foreground" data-sb-field-path="body">{item.body}</p>
+                              </CardContent>
+                            </Card>
+                          </div>
+                        </>
+                      )}
                     </div>
                   </div>
-                  
-                  {/* Desktop layout */}
-                  <div className="hidden lg:flex lg:items-center lg:w-full">
-                    <div className="flex-1 pr-8"></div>
-                    <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background"></div>
-                    <div className="flex-1 pl-8">
-                      <Card className="max-w-md">
-                        <CardHeader>
-                          <Badge variant="secondary" className="w-fit">1945</Badge>
-                          <CardTitle className="text-lg">Neustart nach dem Krieg</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                          <p className="text-sm text-muted-foreground">
-                            Nach der Heimkehr aus dem Krieg wurde die neue Firma Schildmair gegründet, die sich mit dem Verkauf von 
-                            landwirtschaftlichen Sommer- und Wintergeräten beschäftigte. Entwicklung zum österreichweiten Großhandel.
-                          </p>
-                        </CardContent>
-                      </Card>
-                    </div>
-                  </div>
-                </div>
+                ))}
 
                 {/* 1965 */}
                 <div className="relative lg:flex lg:items-center">
@@ -994,15 +916,11 @@ function App() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-background scroll-offset">
+  <section id="contact" className="py-20 bg-background scroll-offset" data-sb-field-path="contactHeading contactSubheading contact">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-              Kontakt & Standort
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              Besuchen Sie uns in Wels oder kontaktieren Sie uns direkt
-            </p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4" data-sb-field-path="contactHeading">{home.contactHeading}</h2>
+            <p className="text-lg text-muted-foreground" data-sb-field-path="contactSubheading">{home.contactSubheading}</p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -1016,10 +934,7 @@ function App() {
               <CardContent className="space-y-6">
                 <div>
                   <h4 className="font-semibold mb-2">Adresse</h4>
-                  <p className="text-muted-foreground">
-                    Gärtnerstraße 9–11<br />
-                    4600 Wels, Österreich
-                  </p>
+                    <p className="text-muted-foreground" data-sb-field-path="contact.address">{home.contact?.address}</p>
                 </div>
                 
                 <Separator />
@@ -1063,7 +978,7 @@ function App() {
                     <Phone className="text-primary mr-3" size={20} />
                     <div>
                       <p className="font-medium">Telefon</p>
-                      <p className="text-muted-foreground">+43 7242 45129</p>
+                      <p className="text-muted-foreground" data-sb-field-path="contact.phone">{home.contact?.phone}</p>
                     </div>
                   </div>
                   
@@ -1071,7 +986,7 @@ function App() {
                     <Phone className="text-primary mr-3" size={20} />
                     <div>
                       <p className="font-medium">Fax</p>
-                      <p className="text-muted-foreground">+43 7242 45129-30</p>
+                      <p className="text-muted-foreground" data-sb-field-path="contact.fax">{home.contact?.fax}</p>
                     </div>
                   </div>
                   
@@ -1079,7 +994,7 @@ function App() {
                     <Mail className="text-primary mr-3" size={20} />
                     <div>
                       <p className="font-medium">E-Mail</p>
-                      <p className="text-muted-foreground">office@schildmair.at</p>
+                      <p className="text-muted-foreground" data-sb-field-path="contact.email">{home.contact?.email}</p>
                     </div>
                   </div>
                 </div>
@@ -1091,15 +1006,13 @@ function App() {
                     <Clock className="text-primary mr-2" size={20} />
                     Öffnungszeiten
                   </h4>
-                  <div className="space-y-2 text-muted-foreground">
-                    <div className="flex justify-between">
-                      <span>Montag - Freitag:</span>
-                      <span>08:00-12:00 & 14:00-18:00</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Samstag:</span>
-                      <span>08:30-12:00</span>
-                    </div>
+                  <div className="space-y-2 text-muted-foreground" data-sb-field-path="contact.openingHours">
+                    {home.contact?.openingHours?.map((oh,i) => (
+                      <div className="flex justify-between" key={i} data-sb-field-path={`.${i}`}>
+                        <span data-sb-field-path="label">{oh.label}:</span>
+                        <span data-sb-field-path="value">{oh.value}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
 
@@ -1146,7 +1059,7 @@ function App() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-primary text-primary-foreground py-12">
+  <footer className="bg-primary text-primary-foreground py-12" data-sb-field-path="footerDescription footerQuickLinksHeading footerLegalHeading footerCopyright">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="col-span-1 md:col-span-2">
@@ -1157,10 +1070,7 @@ function App() {
                   className="h-12 w-auto"
                 />
               </div>
-              <p className="text-primary-foreground/80 mb-4">
-                Ihr vertrauenswürdiger Fachhandel für Eisenwaren & Haushaltsbedarf in Wels. 
-                Tradition trifft auf moderne Services.
-              </p>
+              <p className="text-primary-foreground/80 mb-4" data-sb-field-path="footerDescription">{home.footerDescription}</p>
               <div className="flex space-x-4">
                 <Button variant="ghost" size="sm" className="text-primary-foreground hover:bg-primary-foreground/10" asChild>
                   <a href="https://www.facebook.com/schildmair/" target="_blank" rel="noopener noreferrer">
@@ -1176,7 +1086,7 @@ function App() {
             </div>
             
             <div>
-              <h4 className="font-semibold mb-4">Schnellzugriffe</h4>
+              <h4 className="font-semibold mb-4" data-sb-field-path="footerQuickLinksHeading">{home.footerQuickLinksHeading}</h4>
               <ul className="space-y-2 text-primary-foreground/80">
                 <li><a href="#services" className="hover:text-primary-foreground transition-colors">Leistungen</a></li>
                 <li><a href="#gallery" className="hover:text-primary-foreground transition-colors">Geschäft</a></li>
@@ -1188,7 +1098,7 @@ function App() {
             </div>
             
             <div>
-              <h4 className="font-semibold mb-4">Rechtliches</h4>
+              <h4 className="font-semibold mb-4" data-sb-field-path="footerLegalHeading">{home.footerLegalHeading}</h4>
               <ul className="space-y-2 text-primary-foreground/80">
                 <li>
                   <button 
@@ -1221,7 +1131,7 @@ function App() {
           <Separator className="my-8 bg-primary-foreground/20" />
           
           <div className="text-center text-primary-foreground/60">
-            <p>&copy; 2024 Schildmair EHK Sowi. Alle Rechte vorbehalten.</p>
+            <p data-sb-field-path="footerCopyright">{home.footerCopyright}</p>
           </div>
         </div>
       </footer>

@@ -1,0 +1,10 @@
+{
+  "type": "LegalPage",
+  "slug": "datenschutz",
+  "title": "Datenschutzerklärung",
+  "intro": "Informationen zum Schutz Ihrer persönlichen Daten",
+  "sections": [
+    {"heading": "Einleitung", "body": "Wir nehmen den Schutz der Daten der Nutzer sehr ernst..."},
+    {"heading": "Welche Daten erfassen wir?", "body": "Überblick über erfasste Daten..."}
+  ]
+}

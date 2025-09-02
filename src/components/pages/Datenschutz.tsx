@@ -4,14 +4,16 @@ import { Badge } from '@/components/ui/badge'
 import { Separator } from '@/components/ui/separator'
 import { ArrowLeft } from 'lucide-react'
 import schildmairLogo from '@/assets/images/logo.png'
+import { getDatenschutz } from '@/lib/content'
 
 interface DatenschutzProps {
   onBack: () => void
 }
 
 function Datenschutz({ onBack }: DatenschutzProps) {
+  const data = getDatenschutz()
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background" data-sb-object-id={`content/pages/${data.slug}.json`}>
       {/* Header */}
       <header className="sticky top-0 z-50 bg-background/95 backdrop-blur border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -26,7 +28,7 @@ function Datenschutz({ onBack }: DatenschutzProps) {
                 className="h-10 w-auto"
               />
             </div>
-            <Badge variant="secondary">Datenschutz</Badge>
+            <Badge variant="secondary" data-sb-field-path="title">{data.title}</Badge>
           </div>
         </div>
       </header>
@@ -36,74 +38,28 @@ function Datenschutz({ onBack }: DatenschutzProps) {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-              Datenschutzerklärung
+              <span data-sb-field-path="title">{data.title}</span>
             </h1>
             <p className="text-lg text-muted-foreground">
-              Informationen zum Schutz Ihrer persönlichen Daten
+              <span data-sb-field-path="intro">{data.intro}</span>
             </p>
           </div>
 
           <Card className="p-8">
             <CardHeader>
-              <CardTitle>Datenschutz bei Schildmair</CardTitle>
+              <CardTitle data-sb-field-path="title">{data.title}</CardTitle>
               <CardDescription>
-                Ihre Privatsphäre ist uns wichtig. Hier erfahren Sie, wie wir mit Ihren Daten umgehen.
+                Ihre Privatsphäre ist uns wichtig.
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-8">
-              <div>
-                <h3 className="text-xl font-semibold mb-4">Einleitung</h3>
-                <p className="text-muted-foreground mb-4">
-                  Wir („wir", „uns", „unser/e") nehmen den Schutz der Daten der Nutzer („Nutzer" oder „Sie") unserer Website und/oder unseres Mobile-App (die „Website" bzw. der „Mobile-App") sehr ernst und verpflichten uns, die Informationen, die Nutzer uns in Verbindung mit der Nutzung unserer Website und/oder unseres Mobile-App (zusammen: „digitale Assets") zur Verfügung stellen, zu schützen. Des Weiteren verpflichten wir uns, Ihre Daten gemäß anwendbarem Recht zu schützen und zu verwenden.
-                </p>
-                <p className="text-muted-foreground mb-4">
-                  Diese Datenschutzrichtlinie erläutert unsere Praktiken in Bezug auf die Erfassung, Verwendung und Offenlegung Ihrer Daten durch die Nutzung unserer digitalen Assets (die „Dienste"), wenn Sie über Ihre Geräte auf die Dienste zugreifen.
-                </p>
-                <p className="text-muted-foreground mb-4">
-                  Lesen Sie die Datenschutzrichtlinie bitte sorgfältig durch und stellen Sie sicher, dass Sie unsere Praktiken in Bezug auf Ihre Daten vollumfänglich verstehen, bevor Sie unsere Dienste verwenden. Wenn Sie diese Richtlinie gelesen, vollumfänglich verstanden haben und nicht mit unserer Vorgehensweise einverstanden sind, müssen Sie die Nutzung unserer digitalen Assets und Dienste einstellen. Mit der Nutzung unserer Dienste erkennen Sie die Bedingungen dieser Datenschutzrichtlinie an. Die weitere Nutzung der Dienste stellt Ihre Zustimmung zu dieser Datenschutzrichtlinie und allen Änderungen daran dar.
-                </p>
-                
-                <div className="bg-muted/30 rounded-lg p-6 mt-6">
-                  <h4 className="font-semibold mb-4">In dieser Datenschutzrichtlinie erfahren Sie:</h4>
-                  <ul className="space-y-2 text-muted-foreground text-sm">
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 bg-primary rounded-full mr-3 mt-2"></span>
-                      Wie wir Daten sammeln
-                    </li>
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 bg-primary rounded-full mr-3 mt-2"></span>
-                      Welche Daten wir erfassen
-                    </li>
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 bg-primary rounded-full mr-3 mt-2"></span>
-                      Warum wir diese Daten erfassen
-                    </li>
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 bg-primary rounded-full mr-3 mt-2"></span>
-                      An wen wir die Daten weitergeben
-                    </li>
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 bg-primary rounded-full mr-3 mt-2"></span>
-                      Wo die Daten gespeichert werden
-                    </li>
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 bg-primary rounded-full mr-3 mt-2"></span>
-                      Wie lange die Daten vorgehalten werden
-                    </li>
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 bg-primary rounded-full mr-3 mt-2"></span>
-                      Wie wir die Daten schützen
-                    </li>
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 bg-primary rounded-full mr-3 mt-2"></span>
-                      Wie wir mit Minderjährigen umgehen
-                    </li>
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 bg-primary rounded-full mr-3 mt-2"></span>
-                      Aktualisierungen oder Änderungen der Datenschutzrichtlinie
-                    </li>
-                  </ul>
-                </div>
+              <div data-sb-field-path="sections">
+                {data.sections?.map((s, i) => (
+                  <div key={i} data-sb-field-path={`.${i}`}>
+                    <h3 className="text-xl font-semibold mb-4" data-sb-field-path="heading">{s.heading}</h3>
+                    <p className="text-muted-foreground mb-4" data-sb-field-path="body">{s.body}</p>
+                  </div>
+                ))}
               </div>
 
               <Separator />
