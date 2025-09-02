@@ -22,7 +22,7 @@ export default defineConfig({
       '@': resolve(projectRoot, 'src')
     }
   },
-  base: "/schildmair-ehk-moder/",
+  base: "/",
   server: {
     host: true,
     port: 5000
