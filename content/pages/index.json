@@ -3,7 +3,7 @@
     "slug": "index",
     "title": "EHK Sowi - Eisenwaren & Haushaltsbedarf in Wels",
     "heroTagline": "Seit Generationen Ihr vertrauenswürdiger Partner",
-    "heroHeadline": "Test",
+    "heroHeadline": "EHK Sowi",
     "heroSubheadline": "Ihr vertrauenswürdiger Fachhandel für Eisenwaren & Haushaltsbedarf in Wels",
     "heroDescription": "Bei uns finden Sie alles — von Profi-Werkzeugen bis hin zu hochwertigen Küchenhelfern. Traditioneller Familienbetrieb mit modernem Service.",
     "banner": {
@@ -13,43 +13,13 @@
             "enabled": true,
             "label": "Jetzt bewerben",
             "link": "karriere"
-        },
-        "color": "secondary"
+        }
     },
     "partnerBrandsHeading": "Unsere Markenpartner",
     "partnerBrandsSubheading": "Qualität durch bewährte Marken und langjährige Partnerschaften",
-    "partnerBrands": [
-        "Stihl",
-        "Feller",
-        "FEIN",
-        "Metabo",
-        "Bosch",
-        "KitchenAid",
-        "Kränzle",
-        "BBQ Kitchen",
-        "Kelomat",
-        "Makita",
-        "Milwaukee",
-        "Napoleon",
-        "Petromax",
-        "Ritzenhoff & Breker",
-        "Rottner",
-        "RUKO",
-        "Schüller",
-        "SOLA",
-        "Städter",
-        "Le Creuset",
-        "Tormek",
-        "Victorinox",
-        "WMF"
-    ],
     "servicesHeading": "Unsere Leistungen",
     "servicesSubheading": "Hochwertige Produkte und Services für Privat, Handwerk und Gewerbe",
     "services": [
-        {
-            "title": "Test",
-            "icon": "car"
-        },
         {
             "icon": "Wrench",
             "title": "Eisenwaren & Werkzeug",
