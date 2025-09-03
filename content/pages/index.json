@@ -191,5 +191,7 @@
     "footerCopyright": "© 2024 Schildmair EHK Sowi. Alle Rechte vorbehalten.",
     "footerQuickLinksHeading": "Schnellzugriffe",
     "footerLegalHeading": "Rechtliches",
-    "jobBanner": {}
+    "jobBanner": {
+        "enabled": false
+    }
 }
