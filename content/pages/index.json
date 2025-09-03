@@ -189,5 +189,8 @@
     "footerDescription": "Ihr vertrauenswürdiger Fachhandel für Eisenwaren & Haushaltsbedarf in Wels. Tradition trifft auf moderne Services.",
     "footerCopyright": "© 2024 Schildmair EHK Sowi. Alle Rechte vorbehalten.",
     "footerQuickLinksHeading": "Schnellzugriffe",
-    "footerLegalHeading": "Rechtliches"
+    "footerLegalHeading": "Rechtliches",
+    "jobBanner": {
+        "enabled": false
+    }
 }
