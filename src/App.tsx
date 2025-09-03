@@ -274,7 +274,7 @@ function App() {
                     variant="ghost" 
                     size="sm" 
                     className={`text-secondary-foreground hover:bg-primary hover:text-primary-foreground border border-secondary-foreground/20 hover:border-primary transition-all text-xs px-4 py-1.5 font-medium`}
-                    onClick={() => handlePageChange(home.banner.button?.link)}
+                    onClick={() => handlePageChange("karriere")}
                   >
                     <span data-sb-field-path="ctaLabel">{home.banner?.button.label}</span>
                   </Button>
