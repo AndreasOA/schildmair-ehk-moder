@@ -23,13 +23,15 @@ export default defineStackbitConfig({
             { name: "heroDescription", type: "text" },
             { name: "partnerBrandsHeading", type: "string" },
             { name: "partnerBrandsSubheading", type: "string" },
-            { name: "partnerBrands", type: "list", items: { type: "string" } },
             { name: "servicesHeading", type: "string" },
             { name: "servicesSubheading", type: "string" },
-            { name: "jobBanner", type: "object", fields: [
+            { name: "banner", type: "object", fields: [
               { name: "enabled", type: "boolean" },
               { name: "text", type: "string" },
-              { name: "ctaLabel", type: "string" }
+              { name: "button", type: "object", fields: [
+                { name: "enabled", type: "boolean" },
+                { name: "label", type: "string" }
+              ]}
             ]},
             { name: "services", type: "list", items: { type: "object", fields: [
               { name: "icon", type: "string" },
