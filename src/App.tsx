@@ -259,29 +259,31 @@ function App() {
         )}
       </nav>
 
-      {/* Job Opening Banner */}
-      <div className="bg-gradient-to-r from-secondary to-secondary/80 text-secondary-foreground py-3" data-sb-field-path="jobBanner">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-center text-center">
-            <div className="flex items-center space-x-3">
-              <div className="flex items-center space-x-2">
-                <Users size={20} className="hidden sm:block" />
-                {home.jobBanner?.enabled && (
-                  <span className="text-sm font-medium" data-sb-field-path="text">{home.jobBanner?.text}</span>
+      {/* Banner */}
+      {home.banner?.enabled && (
+        <div className={`bg-gradient-to-r from-${home.banner.color} to-${home.banner.color}/80 text-${home.banner.color}-foreground py-3`} data-sb-field-path="banner">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-center text-center">
+              <div className="flex items-center space-x-3">
+                <div className="flex items-center space-x-2">
+                  <Users size={20} className="hidden sm:block" />
+                  <span className="text-sm font-medium" data-sb-field-path="text">{home.banner?.text}</span>
+                </div>
+                {home.banner.button?.enabled && home.banner.button.label && (
+                  <Button 
+                    variant="ghost" 
+                    size="sm" 
+                    className={`text-${home.banner.color}-foreground hover:bg-primary hover:text-primary-foreground border border-${home.banner.color}-foreground/20 hover:border-primary transition-all text-xs px-4 py-1.5 font-medium`}
+                    onClick={() => handlePageChange(home.banner.button?.link)}
+                  >
+                    <span data-sb-field-path="ctaLabel">{home.banner?.button.label}</span>
+                  </Button>
                 )}
               </div>
-              <Button 
-                variant="ghost" 
-                size="sm" 
-                className="text-secondary-foreground hover:bg-primary hover:text-primary-foreground border border-secondary-foreground/20 hover:border-primary transition-all text-xs px-4 py-1.5 font-medium"
-                onClick={() => handlePageChange('karriere')}
-              >
-                <span data-sb-field-path="ctaLabel">{home.jobBanner?.ctaLabel}</span>
-              </Button>
             </div>
           </div>
         </div>
-      </div>
+      )}
 
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-primary/5 to-secondary/5 py-20 lg:py-32">

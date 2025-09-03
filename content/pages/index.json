@@ -6,10 +6,15 @@
     "heroHeadline": "Test",
     "heroSubheadline": "Ihr vertrauenswürdiger Fachhandel für Eisenwaren & Haushaltsbedarf in Wels",
     "heroDescription": "Bei uns finden Sie alles — von Profi-Werkzeugen bis hin zu hochwertigen Küchenhelfern. Traditioneller Familienbetrieb mit modernem Service.",
-    "jobBanner": {
+    "banner": {
         "enabled": true,
         "text": "🚀 Wir suchen Verstärkung! Verkäufer, Servicetechniker & Reinigungskraft gesucht",
-        "ctaLabel": "Jetzt bewerben"
+        "button": {
+            "enabled": true,
+            "label": "Jetzt bewerben",
+            "link": "karriere"
+        },
+        "color": "secondary"
     },
     "partnerBrandsHeading": "Unsere Markenpartner",
     "partnerBrandsSubheading": "Qualität durch bewährte Marken und langjährige Partnerschaften",
